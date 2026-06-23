@@ -1,0 +1,1675 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2027届本科生福建省实习机会</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f7fb;
+      --surface: #ffffff;
+      --surface-2: #eef4f8;
+      --ink: #182231;
+      --muted: #5d6b7d;
+      --line: #d7e0ea;
+      --line-strong: #b8c7d8;
+      --blue: #1f5fbf;
+      --cyan: #087ea4;
+      --green: #157a55;
+      --amber: #af6e12;
+      --red: #b42318;
+      --shadow: 0 14px 34px rgba(24, 34, 49, 0.09);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+      background:
+        linear-gradient(90deg, rgba(31, 95, 191, 0.06) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(8, 126, 164, 0.05) 1px, transparent 1px),
+        var(--paper);
+      background-size: 34px 34px;
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .page-shell {
+      min-height: 100vh;
+    }
+
+    .band {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(16px);
+    }
+
+    .wrap {
+      width: min(1180px, calc(100vw - 28px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+      color: #344054;
+      font-size: 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 750;
+      color: var(--ink);
+    }
+
+    .mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      border: 1px solid var(--line-strong);
+      background: #f7fbff;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .pill-note {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .hero {
+      padding: 30px 0 24px;
+    }
+
+    .hero-layout {
+      max-width: 900px;
+    }
+
+    .title-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 4.6vw, 52px);
+      line-height: 1.08;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .update-date {
+      flex: 0 0 auto;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 7px 11px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .board-switch {
+      display: inline-flex;
+      margin-top: 16px;
+      padding: 3px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: #e8eef5;
+    }
+
+    .board-switch a {
+      min-width: 96px;
+      padding: 8px 16px;
+      border-radius: 5px;
+      color: #475467;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .board-switch a:hover {
+      color: var(--blue);
+    }
+
+    .board-switch a.active {
+      background: var(--blue);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(31, 95, 191, 0.2);
+    }
+
+    .lead {
+      max-width: 820px;
+      margin: 14px 0 0;
+      color: #344054;
+      font-size: 17px;
+    }
+
+    main {
+      padding: 24px 0 54px;
+    }
+
+    .section {
+      margin-top: 24px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+
+    .section-subtitle {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .filter-panel {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.94);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .filter-group {
+      display: grid;
+      gap: 8px;
+    }
+
+    .filter-group + .filter-grid,
+    .filter-grid + .filter-group,
+    .filter-group + .filter-group {
+      margin-top: 12px;
+    }
+
+    .filter-label {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .filter-grid {
+      display: grid;
+      grid-template-columns: minmax(220px, 1.1fr) minmax(170px, 0.5fr) minmax(170px, 0.5fr);
+      gap: 10px;
+      align-items: center;
+    }
+
+    .search {
+      width: 100%;
+      min-height: 44px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      padding: 0 13px;
+      background: #fff;
+      color: var(--ink);
+      outline: none;
+    }
+
+    .search:focus,
+    select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(31, 95, 191, 0.12);
+    }
+
+    select {
+      width: 100%;
+      min-height: 44px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      padding: 0 12px;
+      color: var(--ink);
+      background: #fff;
+      outline: none;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-chip {
+      border: 1px solid var(--line-strong);
+      background: #fff;
+      color: #344054;
+      border-radius: 999px;
+      min-height: 34px;
+      padding: 0 12px;
+      cursor: pointer;
+      transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+    }
+
+    .filter-chip.active {
+      border-color: var(--blue);
+      background: #eaf2ff;
+      color: #174ea6;
+      font-weight: 700;
+    }
+
+    .chip-count {
+      margin-left: 6px;
+      color: inherit;
+      opacity: 0.72;
+      font-size: 12px;
+    }
+
+    .platform-search {
+      margin-top: 22px;
+    }
+
+    .platform-search-head {
+      margin-bottom: 12px;
+    }
+
+    .platform-search-head h2 {
+      font-size: 19px;
+    }
+
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .platform-card {
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--platform-color, var(--blue));
+      border-radius: var(--radius);
+      padding: 13px;
+      background: #fff;
+      min-width: 0;
+    }
+
+    .platform-card h3 {
+      margin: 0 0 4px;
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+
+    .platform-card p {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .platform-links {
+      display: grid;
+      gap: 7px;
+    }
+
+    .platform-link {
+      min-height: 36px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      padding: 7px 9px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      background: #f9fbff;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .platform-link:hover {
+      border-color: var(--platform-color, var(--blue));
+      color: var(--platform-color, var(--blue));
+    }
+
+    .platform-link span:last-child {
+      color: inherit;
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .result-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 18px 0 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .job-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .job-card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      background: var(--surface);
+      box-shadow: 0 10px 26px rgba(24, 34, 49, 0.06);
+      min-width: 0;
+    }
+
+    .job-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .company-name {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.28;
+      letter-spacing: 0;
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    .job-card .job-title {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .status {
+      flex: 0 0 auto;
+      border-radius: 999px;
+      padding: 5px 9px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.25;
+      max-width: 180px;
+      text-align: center;
+    }
+
+    .status.open { background: var(--green); }
+    .status.verify { background: var(--amber); }
+    .status.watch { background: var(--cyan); }
+    .status.closed { background: var(--red); }
+
+    .meta-row,
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .meta,
+    .fit-tag {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 8px;
+      background: #fbfdff;
+      color: #344054;
+      font-size: 12px;
+    }
+
+    .fit-tag.major {
+      border-color: #c8ddff;
+      background: #eef5ff;
+      color: #174ea6;
+      font-weight: 700;
+    }
+
+    .job-card p {
+      margin: 0;
+      color: #344054;
+      font-size: 14px;
+    }
+
+    .job-card .source {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .field {
+      display: grid;
+      gap: 4px;
+    }
+
+    .field strong {
+      color: var(--ink);
+      font-size: 13px;
+    }
+
+    .link-box {
+      display: grid;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 2px;
+    }
+
+    .url {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #f9fbff;
+      padding: 9px 10px;
+      color: #245184;
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .action {
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      min-height: 38px;
+      padding: 0 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .action.primary {
+      border-color: var(--blue);
+      background: var(--blue);
+      color: #fff;
+    }
+
+    .empty {
+      border: 1px dashed var(--line-strong);
+      border-radius: var(--radius);
+      padding: 34px;
+      background: rgba(255, 255, 255, 0.86);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .notice-panel {
+      border: 1px solid #f2c98a;
+      background: #fff8eb;
+      border-radius: var(--radius);
+      padding: 16px;
+      color: #634008;
+    }
+
+    .notice-panel h2 {
+      font-size: 19px;
+    }
+
+    .notice-list {
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+
+    .notice-list li {
+      margin: 6px 0;
+    }
+
+    .hero-notice {
+      margin-top: 18px;
+      max-width: 820px;
+      box-shadow: none;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 22px;
+      transform: translateX(-50%) translateY(18px);
+      opacity: 0;
+      pointer-events: none;
+      border-radius: 999px;
+      padding: 10px 14px;
+      color: #fff;
+      background: rgba(24, 34, 49, 0.92);
+      transition: opacity 160ms ease, transform 160ms ease;
+      z-index: 30;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    footer {
+      padding: 26px 0 38px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.7);
+      font-size: 13px;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .visit-counter {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      padding: 7px 10px;
+      color: #344054;
+      white-space: nowrap;
+    }
+
+    .visit-count-value {
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    @media (max-width: 920px) {
+      .title-row {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .job-grid,
+      .filter-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .platform-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .wrap {
+        width: min(100vw - 20px, 1180px);
+      }
+
+      .topbar,
+      .title-row,
+      .section-head,
+      .result-head,
+      .job-top {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding-top: 20px;
+      }
+
+      h1 {
+        font-size: 18px;
+      }
+
+      .major-card,
+      .job-card,
+      .filter-panel,
+      .notice-panel {
+        padding: 13px;
+      }
+
+      .button-row .action {
+        flex: 1 1 140px;
+      }
+
+      .platform-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="wrap hero">
+      <div class="hero-layout">
+        <div>
+          <div class="title-row">
+            <h1>2027届本科生福建省实习机会</h1>
+            <span class="update-date">更新日期：2026年6月23日</span>
+          </div>
+          <nav class="board-switch" aria-label="就业与实习机会切换">
+            <a href="./jobs.html">找工作</a>
+            <a class="active" href="./" aria-current="page">找实习</a>
+          </nav>
+          <p class="lead">面向电子信息工程、通信工程、微电子科学与工程、电气工程及其自动化、建筑电气与智能化、电气工程与智能控制六个专业。</p>
+          <section class="notice-panel hero-notice" aria-labelledby="noticeTitle">
+            <h2 id="noticeTitle">投递提醒</h2>
+            <ul class="notice-list">
+              <li>招聘平台岗位变化很快，投递前请以企业官网或岗位页面显示为准。</li>
+              <li>凡要求缴纳培训费、押金、服装费、体检费或承诺“包录用”的信息，都不要相信。</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="section" aria-labelledby="filterTitle">
+        <div class="section-head">
+          <div>
+            <h2 id="filterTitle">筛选岗位</h2>
+            <p class="section-subtitle">可按专业、城市、岗位状态、专业方向和关键词筛选。通信工程同学也可投递“电子类、电子信息类、嵌入式相关”岗位。</p>
+          </div>
+        </div>
+
+        <div class="filter-panel">
+          <div class="filter-group">
+            <div class="filter-label">专业</div>
+            <div class="chip-row" id="majorChips"></div>
+          </div>
+          <div class="filter-grid">
+            <input class="search" id="searchInput" type="search" placeholder="搜索企业、岗位、专业要求或实习内容">
+            <select id="citySelect" aria-label="城市筛选">
+              <option value="all">全部城市</option>
+              <option value="福州">福州</option>
+              <option value="厦门">厦门</option>
+              <option value="泉州">泉州</option>
+              <option value="晋江">晋江</option>
+              <option value="宁德">宁德</option>
+            </select>
+            <select id="statusSelect" aria-label="岗位状态筛选">
+              <option value="all">全部状态</option>
+              <option value="正在投递">正在投递</option>
+              <option value="投递时请确认招聘时效性">投递时请确认招聘时效性</option>
+              <option value="关注补录">关注补录</option>
+              <option value="已截止仅参考">已截止仅参考</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <div class="filter-label">专业方向</div>
+            <div class="chip-row" id="directionChips"></div>
+          </div>
+        </div>
+
+        <section class="platform-search" aria-labelledby="platformSearchTitle">
+          <div class="platform-search-head">
+            <h2 id="platformSearchTitle">五大招聘平台实时检索</h2>
+            <p class="section-subtitle">已按六个专业预设福州优先关键词。平台岗位更新快，打开后建议切换为“最新发布”，并再次确认工作城市、实习身份和招聘时效。</p>
+          </div>
+          <div class="platform-grid">
+            <article class="platform-card" style="--platform-color: #00a76f;">
+              <h3>BOSS直聘</h3>
+              <p>福州市岗位搜索结果</p>
+              <div class="platform-links">
+                <a class="platform-link" href="https://www.zhipin.com/web/geek/job?query=%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AE%9E%E4%B9%A0%E7%94%9F&amp;city=101230100" target="_blank" rel="noopener"><span>电子信息工程</span><span>→</span></a>
+                <a class="platform-link" href="https://www.zhipin.com/web/geek/job?query=%E9%80%9A%E4%BF%A1%E5%AE%9E%E4%B9%A0%E7%94%9F&amp;city=101230100" target="_blank" rel="noopener"><span>通信工程</span><span>→</span></a>
+                <a class="platform-link" href="https://www.zhipin.com/web/geek/job?query=IC%E8%AE%BE%E8%AE%A1%E5%AE%9E%E4%B9%A0%E7%94%9F&amp;city=101230100" target="_blank" rel="noopener"><span>微电子科学与工程</span><span>→</span></a>
+                <a class="platform-link" href="https://www.zhipin.com/web/geek/job?query=%E7%94%B5%E6%B0%94%E8%87%AA%E5%8A%A8%E5%8C%96%E5%AE%9E%E4%B9%A0%E7%94%9F&amp;city=101230100" target="_blank" rel="noopener"><span>电气工程及其自动化</span><span>→</span></a>
+                <a class="platform-link" href="https://www.zhipin.com/web/geek/job?query=%E5%BB%BA%E7%AD%91%E7%94%B5%E6%B0%94%E5%AE%9E%E4%B9%A0%E7%94%9F&amp;city=101230100" target="_blank" rel="noopener"><span>建筑电气与智能化</span><span>→</span></a>
+                <a class="platform-link" href="https://www.zhipin.com/web/geek/job?query=PLC%E8%87%AA%E5%8A%A8%E5%8C%96%E5%AE%9E%E4%B9%A0%E7%94%9F&amp;city=101230100" target="_blank" rel="noopener"><span>电气工程与智能控制</span><span>→</span></a>
+              </div>
+            </article>
+
+            <article class="platform-card" style="--platform-color: #e5484d;">
+              <h3>前程无忧 51JOB</h3>
+              <p>福州市岗位搜索结果</p>
+              <div class="platform-links">
+                <a class="platform-link" href="https://we.51job.com/pc/search?jobArea=090200&amp;keyword=%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AE%9E%E4%B9%A0%E7%94%9F" target="_blank" rel="noopener"><span>电子信息工程</span><span>→</span></a>
+                <a class="platform-link" href="https://we.51job.com/pc/search?jobArea=090200&amp;keyword=%E9%80%9A%E4%BF%A1%E5%AE%9E%E4%B9%A0%E7%94%9F" target="_blank" rel="noopener"><span>通信工程</span><span>→</span></a>
+                <a class="platform-link" href="https://we.51job.com/pc/search?jobArea=090200&amp;keyword=IC%E8%AE%BE%E8%AE%A1%E5%AE%9E%E4%B9%A0%E7%94%9F" target="_blank" rel="noopener"><span>微电子科学与工程</span><span>→</span></a>
+                <a class="platform-link" href="https://we.51job.com/pc/search?jobArea=090200&amp;keyword=%E7%94%B5%E6%B0%94%E8%87%AA%E5%8A%A8%E5%8C%96%E5%AE%9E%E4%B9%A0%E7%94%9F" target="_blank" rel="noopener"><span>电气工程及其自动化</span><span>→</span></a>
+                <a class="platform-link" href="https://we.51job.com/pc/search?jobArea=090200&amp;keyword=%E5%BB%BA%E7%AD%91%E7%94%B5%E6%B0%94%E5%AE%9E%E4%B9%A0%E7%94%9F" target="_blank" rel="noopener"><span>建筑电气与智能化</span><span>→</span></a>
+                <a class="platform-link" href="https://we.51job.com/pc/search?jobArea=090200&amp;keyword=PLC%E8%87%AA%E5%8A%A8%E5%8C%96%E5%AE%9E%E4%B9%A0%E7%94%9F" target="_blank" rel="noopener"><span>电气工程与智能控制</span><span>→</span></a>
+              </div>
+            </article>
+
+            <article class="platform-card" style="--platform-color: #2563eb;">
+              <h3>智联招聘</h3>
+              <p>福州市岗位搜索结果</p>
+              <div class="platform-links">
+                <a class="platform-link" href="https://sou.zhaopin.com/?jl=%E7%A6%8F%E5%B7%9E&amp;kw=%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AE%9E%E4%B9%A0%E7%94%9F" target="_blank" rel="noopener"><span>电子信息工程</span><span>→</span></a>
+                <a class="platform-link" href="https://sou.zhaopin.com/?jl=%E7%A6%8F%E5%B7%9E&amp;kw=%E9%80%9A%E4%BF%A1%E5%AE%9E%E4%B9%A0%E7%94%9F" target="_blank" rel="noopener"><span>通信工程</span><span>→</span></a>
+                <a class="platform-link" href="https://sou.zhaopin.com/?jl=%E7%A6%8F%E5%B7%9E&amp;kw=IC%E8%AE%BE%E8%AE%A1%E5%AE%9E%E4%B9%A0%E7%94%9F" target="_blank" rel="noopener"><span>微电子科学与工程</span><span>→</span></a>
+                <a class="platform-link" href="https://sou.zhaopin.com/?jl=%E7%A6%8F%E5%B7%9E&amp;kw=%E7%94%B5%E6%B0%94%E8%87%AA%E5%8A%A8%E5%8C%96%E5%AE%9E%E4%B9%A0%E7%94%9F" target="_blank" rel="noopener"><span>电气工程及其自动化</span><span>→</span></a>
+                <a class="platform-link" href="https://sou.zhaopin.com/?jl=%E7%A6%8F%E5%B7%9E&amp;kw=%E5%BB%BA%E7%AD%91%E7%94%B5%E6%B0%94%E5%AE%9E%E4%B9%A0%E7%94%9F" target="_blank" rel="noopener"><span>建筑电气与智能化</span><span>→</span></a>
+                <a class="platform-link" href="https://sou.zhaopin.com/?jl=%E7%A6%8F%E5%B7%9E&amp;kw=PLC%E8%87%AA%E5%8A%A8%E5%8C%96%E5%AE%9E%E4%B9%A0%E7%94%9F" target="_blank" rel="noopener"><span>电气工程与智能控制</span><span>→</span></a>
+              </div>
+            </article>
+
+            <article class="platform-card" style="--platform-color: #f08c00;">
+              <h3>猎聘</h3>
+              <p>福建省岗位关键词结果</p>
+              <div class="platform-links">
+                <a class="platform-link" href="https://www.liepin.com/zhaopin/?key=%E7%A6%8F%E5%B7%9E%20%E5%B5%8C%E5%85%A5%E5%BC%8F%20%E5%AE%9E%E4%B9%A0%E7%94%9F" target="_blank" rel="noopener"><span>电子信息工程</span><span>→</span></a>
+                <a class="platform-link" href="https://www.liepin.com/zhaopin/?key=%E7%A6%8F%E5%BB%BA%20%E9%80%9A%E4%BF%A1%20%E5%AE%9E%E4%B9%A0%E7%94%9F" target="_blank" rel="noopener"><span>通信工程</span><span>→</span></a>
+                <a class="platform-link" href="https://www.liepin.com/zhaopin/?key=%E7%A6%8F%E5%BB%BA%20IC%E8%AE%BE%E8%AE%A1%20EDA%20%E5%AE%9E%E4%B9%A0%E7%94%9F" target="_blank" rel="noopener"><span>微电子科学与工程</span><span>→</span></a>
+                <a class="platform-link" href="https://www.liepin.com/zhaopin/?key=%E7%A6%8F%E5%B7%9E%20%E7%94%B5%E6%B0%94%E8%87%AA%E5%8A%A8%E5%8C%96%20%E5%AE%9E%E4%B9%A0%E7%94%9F" target="_blank" rel="noopener"><span>电气工程及其自动化</span><span>→</span></a>
+                <a class="platform-link" href="https://www.liepin.com/zhaopin/?key=%E7%A6%8F%E5%BB%BA%20%E5%BB%BA%E7%AD%91%E7%94%B5%E6%B0%94%20%E5%AE%9E%E4%B9%A0%E7%94%9F" target="_blank" rel="noopener"><span>建筑电气与智能化</span><span>→</span></a>
+                <a class="platform-link" href="https://www.liepin.com/zhaopin/?key=%E7%A6%8F%E5%BB%BA%20PLC%20%E8%87%AA%E5%8A%A8%E5%8C%96%20%E5%AE%9E%E4%B9%A0%E7%94%9F" target="_blank" rel="noopener"><span>电气工程与智能控制</span><span>→</span></a>
+              </div>
+            </article>
+
+            <article class="platform-card" style="--platform-color: #7c3aed;">
+              <h3>实习僧</h3>
+              <p>福建省实习岗位关键词结果</p>
+              <div class="platform-links">
+                <a class="platform-link" href="https://www.shixiseng.com/interns?keyword=%E7%A6%8F%E5%B7%9E%E5%B5%8C%E5%85%A5%E5%BC%8F" target="_blank" rel="noopener"><span>电子信息工程</span><span>→</span></a>
+                <a class="platform-link" href="https://www.shixiseng.com/interns?keyword=%E7%A6%8F%E5%BB%BA%E9%80%9A%E4%BF%A1" target="_blank" rel="noopener"><span>通信工程</span><span>→</span></a>
+                <a class="platform-link" href="https://www.shixiseng.com/interns?keyword=%E7%A6%8F%E5%BB%BAIC%E8%AE%BE%E8%AE%A1EDA" target="_blank" rel="noopener"><span>微电子科学与工程</span><span>→</span></a>
+                <a class="platform-link" href="https://www.shixiseng.com/interns?keyword=%E7%A6%8F%E5%BB%BA%E7%94%B5%E6%B0%94%E8%87%AA%E5%8A%A8%E5%8C%96" target="_blank" rel="noopener"><span>电气工程及其自动化</span><span>→</span></a>
+                <a class="platform-link" href="https://www.shixiseng.com/interns?keyword=%E7%A6%8F%E5%BB%BA%E5%BB%BA%E7%AD%91%E7%94%B5%E6%B0%94" target="_blank" rel="noopener"><span>建筑电气与智能化</span><span>→</span></a>
+                <a class="platform-link" href="https://www.shixiseng.com/interns?keyword=%E7%A6%8F%E5%BB%BAPLC%E8%87%AA%E5%8A%A8%E5%8C%96" target="_blank" rel="noopener"><span>电气工程与智能控制</span><span>→</span></a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <div class="result-head">
+          <span id="resultCount">正在加载岗位</span>
+          <button class="action" id="resetButton" type="button">清空筛选</button>
+        </div>
+
+        <div class="job-grid" id="jobList"></div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="wrap footer-content">
+        <span>信息来源包括企业官网、校招官网、学校就业网，以及 BOSS直聘、前程无忧51JOB、智联招聘、猎聘、实习僧等平台公开页面。页面为年级就业信息整理用途，最近检索日期为 2026-06-23。</span>
+        <span class="visit-counter" aria-live="polite">访问次数：<strong class="visit-count-value" id="visitCount">统计中</strong> 次</span>
+      </div>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast">已复制报名链接</div>
+
+  <script>
+    const majors = [
+      {
+        id: "电子信息工程",
+        code: "EIE",
+        focus: "嵌入式开发",
+        description: "重点关注 C/C++、单片机、嵌入式 Linux、硬件测试、软件测试和电子类岗位。",
+        keywords: ["嵌入式", "C/C++", "硬件测试", "软件测试"]
+      },
+      {
+        id: "通信工程",
+        code: "COMM",
+        focus: "无线通信 / 通信网络及数据处理",
+        description: "可投通信类，也可关注写有电子类、电子信息类、计算机类、自动化类的岗位。",
+        keywords: ["无线通信", "通信网络", "数据处理", "电子类可投"]
+      },
+      {
+        id: "微电子科学与工程",
+        code: "MICRO",
+        focus: "IC设计与 EDA 软件开发",
+        description: "优先关注 IC 设计、芯片验证、版图、半导体测试、工艺和 EDA 方向。",
+        keywords: ["IC设计", "芯片验证", "版图", "EDA"]
+      },
+      {
+        id: "电气工程及其自动化",
+        code: "EEA",
+        focus: "电力系统 / 电气控制 / 自动化",
+        description: "重点关注电气控制、PLC、电力电子、供配电、电气设计、设备调试和新能源岗位。",
+        keywords: ["电气控制", "PLC/自动化", "电力电子", "供配电"]
+      },
+      {
+        id: "建筑电气与智能化",
+        code: "BEI",
+        focus: "供配电 / 楼宇自控 / 建筑智能化",
+        description: "重点关注建筑供配电、弱电系统、楼宇自控、智能建筑、机电设计和工程调试岗位。",
+        keywords: ["供配电", "建筑智能化", "楼宇自控", "弱电系统"]
+      },
+      {
+        id: "电气工程与智能控制",
+        code: "EIC",
+        focus: "智能控制 / PLC / 工业自动化",
+        description: "重点关注 PLC、运动控制、工业网络、自动化设备、电气控制和现场调试岗位。",
+        keywords: ["智能控制", "PLC/自动化", "电气控制", "电气调试"]
+      }
+    ];
+
+    const directions = ["嵌入式", "C/C++", "硬件测试", "软件测试", "无线通信", "通信网络", "数据处理", "IC设计", "芯片验证", "版图", "EDA", "半导体工艺", "电气控制", "PLC/自动化", "电力电子", "供配电", "建筑智能化", "楼宇自控", "弱电系统", "电气调试"];
+
+    const jobs = [
+      {
+        company: "福州福光水务科技有限公司",
+        title: "嵌入式开发实习生",
+        city: "福州",
+        district: "仓山区",
+        status: "正在投递",
+        statusClass: "open",
+        cityRank: 1,
+        majors: ["电子信息工程", "通信工程"],
+        directions: ["嵌入式", "C/C++"],
+        intro: "智慧水务、水质在线监测、环境监测智能硬件相关企业。",
+        requirements: "电子信息工程、通信工程；嵌入式开发方向更匹配。",
+        content: "参与设备显示端程序从 Android 平台向嵌入式 Linux 平台迁移，涉及 C/C++、ARM、轻量级 GUI、底层驱动配合等。",
+        benefits: "智联招聘页面显示：实习薪资 100-200 元/天。",
+        reason: "电子信息工程和通信工程有嵌入式基础的同学优先关注。",
+        source: "智联招聘，链接复核日期 2026-06-23",
+        url: "https://www.zhaopin.com/jobdetail/CC138229170J40870344505.htm"
+      },
+      {
+        company: "锐捷网络股份有限公司",
+        title: "2027 届暑期实习",
+        city: "福州",
+        district: "福州总部及多地研发中心",
+        status: "正在投递",
+        statusClass: "open",
+        cityRank: 1,
+        majors: ["电子信息工程", "通信工程", "微电子科学与工程"],
+        directions: ["通信网络", "嵌入式", "硬件测试", "软件测试"],
+        intro: "总部位于福州的 ICT 基础设施及行业解决方案企业。",
+        requirements: "电子信息工程、通信工程、微电子科学与工程；嵌入式、通信网络、硬件测试、集成电路方向可关注。",
+        content: "岗位覆盖后端开发、测试、数据、运维、硬件工程师、电子/半导体、AI 等方向。",
+        duration: "暑期实习",
+        benefits: "公开招聘信息显示：导师带教，培训 + 实战结合；异地实习可提供租房补贴；优秀实习生可直接转正，提前锁定 offer。",
+        note: "已改为可正常打开的锐捷校园招聘站入口，进入后筛选实习岗位和福州工作地点。",
+        reason: "通信网络、硬件和嵌入式方向都较对口，福州岗位优先级高。",
+        source: "企业校招入口及招聘平台，链接复核日期 2026-06-23",
+        url: "https://app.mokahr.com/campus-recruitment/ruijie/136206"
+      },
+      {
+        company: "新华三集团",
+        title: "2027 届实习生招聘",
+        city: "福州",
+        district: "福州及全国多地",
+        status: "正在投递",
+        statusClass: "open",
+        cityRank: 1,
+        majors: ["电子信息工程", "通信工程", "微电子科学与工程"],
+        directions: ["通信网络", "C/C++", "硬件测试", "软件测试"],
+        intro: "数字化与 AI 解决方案企业，业务覆盖云、网、安、算、存、端。",
+        requirements: "通信工程、电子信息工程；通信网络、硬件测试、C/C++ 方向可关注。",
+        content: "实习岗位包括 AI 开发、硬件、C/C++/Java 软件开发、测试、售前技术等。",
+        duration: "暑期实习",
+        benefits: "公开招聘信息显示：真实项目实战、导师 1 对 1 带教，表现优秀可获得校招面试优先机会。",
+        reason: "通信工程和电子信息工程同学可重点看网络、硬件、测试和 C/C++ 岗位。",
+        source: "新华三招聘官网及公开招聘信息，链接复核日期 2026-06-23",
+        url: "https://career.h3c.com/intern/jobs"
+      },
+      {
+        company: "福建睿能科技股份有限公司",
+        title: "睿能科技招聘 27 届暑期实习生",
+        city: "福州",
+        district: "福州总部及相关岗位",
+        status: "正在投递",
+        statusClass: "open",
+        cityRank: 1,
+        majors: ["电子信息工程", "微电子科学与工程"],
+        directions: ["嵌入式", "硬件测试"],
+        intro: "睿能科技成立于 2007 年，总部位于福州，2017 年在上交所主板上市，主要从事工业自动化控制产品的研发、生产、销售和服务，产品覆盖电控系统、伺服系统、变频器、PLC、人机界面和物联网网关等。",
+        requirements: "电子信息工程、微电子科学与工程。",
+        content: "进行产品培训，熟悉公司产品的技术参数、原理性能、使用方法、维护方法；安装、测试、维护、故障排除。",
+        duration: "暑期实习",
+        benefits: "提供住宿；实习津贴 50-100 元/天；每周 5 天，8 小时/天。",
+        note: "与HR确认过：技术服务工程师岗位招聘电子信息、微电子专业实习生，页面显示全职但报名实习是相同链接。",
+        reason: "福州本地上市工业自动化企业，岗位内容偏产品技术支持、测试维护和控制产品应用，适合电子信息与微电子同学了解工业自动化产品。",
+        source: "睿能科技官网、用户与 HR 确认信息及招聘链接，链接复核日期 2026-06-23",
+        url: "https://app.mokahr.com/su/a7huG"
+      },
+      {
+        company: "福建俊佑机电设备有限公司",
+        title: "电气技术员（在校实习生）",
+        city: "福州",
+        district: "福州岗位",
+        status: "正在投递",
+        statusClass: "open",
+        cityRank: 1,
+        majors: ["电气工程及其自动化", "电气工程与智能控制"],
+        directions: ["电气控制", "PLC/自动化", "电气调试"],
+        intro: "从事机电设备相关业务的企业，招聘页面显示工作地点为福州。",
+        requirements: "大专及以上在校实习生或应届生；电气自动化、机电类等相关专业。",
+        content: "电气技术员岗位，适合希望积累机电设备、电气安装调试和现场技术经验的同学。",
+        benefits: "招聘页面显示：公司每三个月进行一次调薪评估，具体实习待遇请投递时确认。",
+        note: "页面显示职位近期更新，但薪资字段未完整公开，请同时确认福州具体工作地点、实习周期和岗位安排。",
+        reason: "专业要求直接包含电气自动化，适合电气控制和智能控制方向同学。",
+        source: "北极星招聘，链接复核日期 2026-06-23",
+        url: "https://hr.bjx.com.cn/jobs/427328.html"
+      },
+      {
+        company: "福州亿得隆电气技术有限公司",
+        title: "电子助理工程师（实习生）",
+        city: "福州",
+        district: "福州岗位",
+        status: "正在投递",
+        statusClass: "open",
+        cityRank: 1,
+        majors: ["电子信息工程", "通信工程", "电气工程及其自动化", "电气工程与智能控制"],
+        directions: ["硬件测试", "电气控制", "PLC/自动化", "电气调试"],
+        intro: "福州本地电气技术企业，岗位方向涉及电子、电气与自动化相关技术工作。",
+        requirements: "全日制大专及以上；电子、通信、自动化等电子相关专业。",
+        content: "电子助理工程师实习岗位，具体职责需登录招聘页面查看，并在投递时确认实习内容和带教安排。",
+        note: "页面显示职位近期更新；公开页面只展示部分岗位描述，建议投递后向 HR 核对完整职责、实习周期和待遇。",
+        reason: "专业要求覆盖电子、通信和自动化，适合电子信息、通信及电气控制方向同学。",
+        source: "北极星招聘，链接复核日期 2026-06-23",
+        url: "https://hr.bjx.com.cn/jobs/556758.html"
+      },
+      {
+        company: "中国电建集团福建省电力勘测设计院有限公司",
+        title: "电气设计实习生 J10089",
+        city: "福州",
+        district: "鼓楼区五四路",
+        status: "正在投递",
+        statusClass: "open",
+        cityRank: 1,
+        majors: ["电气工程及其自动化", "建筑电气与智能化", "电气工程与智能控制"],
+        directions: ["电气控制", "供配电", "建筑智能化", "电气调试"],
+        intro: "中国电建集团下属福建省电力勘测设计院，具备电力系统规划设计、电网工程勘测设计、建筑智能化设计等资质。",
+        requirements: "本科及以上；电气工程及其自动化及相关专业，成绩良好及以上；建筑电气与智能化、电气工程与智能控制同学可按岗位匹配度咨询投递。",
+        content: "参与电力建设项目全过程服务中的电气专业技术工作，包括前期咨询、设计、工代服务和 EPC 技术管理等。",
+        duration: "智联页面显示实习 2 个月，每周 5 天。",
+        benefits: "智联页面显示实习薪资 80-120 元/天。",
+        note: "岗位更新时间为 6 月 12 日；投递时请确认当前仍开放，并核对是否接受 2027 届本科生暑期实习。",
+        reason: "福州央企设计院实习，直接匹配电气设计、供配电和建筑智能化方向。",
+        source: "智联招聘，链接复核日期 2026-06-23",
+        url: "https://www.zhaopin.com/jobdetail/CC266197810J40874294505.htm"
+      },
+      {
+        company: "中能电气股份有限公司",
+        title: "储备干部实习生 / 应届生培养",
+        city: "福州",
+        district: "福州",
+        status: "投递时请确认招聘时效性",
+        statusClass: "verify",
+        cityRank: 1,
+        majors: ["电子信息工程", "电气工程及其自动化", "建筑电气与智能化", "电气工程与智能控制"],
+        directions: ["电气控制", "PLC/自动化", "电力电子", "供配电", "电气调试"],
+        intro: "福州本地电气设备与电力能源领域上市企业，业务涉及电气设备制造、电力工程、电力智能科技和新能源充电设施。",
+        requirements: "电力、电气、机电、电子信息等相关专业；页面同时使用“应届生”和“储备干部实习生”类别。",
+        content: "先进行 3-6 个月车间轮岗或电力工程现场学习，再根据表现和业务需要初步定岗。",
+        duration: "3-6 个月培养或轮岗；是否可作为 2027 届在校实习需与 HR 确认。",
+        benefits: "招聘页面显示：周末双休、带薪年假、包住宿、高温补贴、节日福利、提供班车；实习阶段适用范围以 HR 回复为准。",
+        note: "岗位页面近期更新，但主要面向应届生培养。2027 届同学投递前请确认能否按在校实习身份参加。",
+        reason: "岗位覆盖电气设备生产、电力工程、电力智能和新能源充电，三个电气类专业均可重点了解。",
+        source: "北极星招聘，链接复核日期 2026-06-23",
+        url: "https://hr.bjx.com.cn/jobs/611934.html"
+      },
+      {
+        company: "浙江大华技术股份有限公司",
+        title: "2027 届实习生（交付）",
+        city: "福州",
+        district: "晋安区",
+        status: "投递时请确认招聘时效性",
+        statusClass: "verify",
+        cityRank: 1,
+        majors: ["电子信息工程", "通信工程"],
+        directions: ["通信网络", "数据处理"],
+        intro: "智慧物联、安防及行业解决方案企业。",
+        requirements: "2027 届本科及以上；电子信息工程、通信工程相关专业。",
+        content: "参与智慧物联解决方案设计、项目支持、技术交流、方案制作和交付支持等。",
+        duration: "暑期实习",
+        reason: "适合想做通信/物联网解决方案、项目交付和技术支持的同学。",
+        source: "智联招聘及学校就业平台，链接复核日期 2026-06-23",
+        url: "https://www.zhaopin.com/jobdetail/CC145470510J40856222014.htm"
+      },
+      {
+        company: "福建新大陆通信科技股份有限公司",
+        title: "软件测试实习生",
+        city: "福州",
+        district: "马尾区",
+        status: "投递时请确认招聘时效性",
+        statusClass: "verify",
+        cityRank: 1,
+        majors: ["电子信息工程", "通信工程"],
+        directions: ["软件测试", "通信网络"],
+        intro: "新大陆科技集团成员企业，面向通信、广电、电力等场景提供终端设备和技术服务。",
+        requirements: "通信工程、电子信息工程相关专业；通信系统或终端测试方向更匹配。",
+        content: "制定测试方案和测试用例，执行测试任务，提交并跟踪缺陷，输出测试报告。",
+        note: "原转载岗位页已无法稳定打开，现改为新大陆集团官方招聘站。进入后选择校园招聘或实习岗位，并查找新大陆通信及福州岗位。",
+        reason: "通信和电子信息同学可把通信系统、终端测试和项目经验写进简历。",
+        source: "新大陆科技集团官网招聘入口，链接复核日期 2026-06-23",
+        url: "https://newland.zhiye.com/"
+      },
+      {
+        company: "福建联迪商用设备有限公司",
+        title: "软件测试实习生",
+        city: "福州",
+        district: "鼓楼区",
+        status: "投递时请确认招聘时效性",
+        statusClass: "verify",
+        cityRank: 1,
+        majors: ["电子信息工程", "通信工程"],
+        directions: ["软件测试", "C/C++"],
+        intro: "电子支付终端和支付解决方案企业。",
+        requirements: "电子信息工程、通信工程相关专业；有 C/C++ 基础或终端测试经验更匹配。",
+        content: "负责软件系统测试，包括测试用例设计、测试执行、功能测试和自动化测试基础工作。",
+        benefits: "智联招聘页面显示：实习薪资 120-130 元/天。",
+        reason: "电子和通信同学如果有编程基础，可作为测试开发或终端产品测试方向尝试。",
+        source: "智联招聘，链接复核日期 2026-06-23",
+        url: "https://www.zhaopin.com/jobdetail/CC139313710J40651994401.htm"
+      },
+      {
+        company: "瑞芯微电子股份有限公司",
+        title: "校园招聘 / 实习生招聘入口",
+        city: "福州",
+        district: "鼓楼区",
+        status: "关注补录",
+        statusClass: "watch",
+        cityRank: 1,
+        majors: ["电子信息工程", "通信工程", "微电子科学与工程"],
+        directions: ["IC设计", "芯片验证", "硬件测试"],
+        intro: "总部福州的集成电路设计企业，主要方向包括 AIoT SoC、PMIC、数模混合芯片等。",
+        requirements: "微电子科学与工程、电子信息工程、通信工程、集成电路相关专业。",
+        content: "可关注数字 IC、模拟 IC、硬件测试、软件测试、算法、AI 编译器等岗位。",
+        note: "已按最新确认改为瑞芯微招聘系统入口，投递时请筛选福州、实习或校园相关岗位。",
+        reason: "福州本地芯片设计企业，微电子同学应长期关注。",
+        source: "瑞芯微招聘系统，链接复核日期 2026-06-23",
+        url: "https://hr.rock-chips.com/social-recruitment/#/"
+      },
+      {
+        company: "福建星网锐捷通讯股份有限公司",
+        title: "2026 校招（含 27 届实习）",
+        city: "福州",
+        district: "福州",
+        status: "已截止仅参考",
+        statusClass: "closed",
+        cityRank: 1,
+        majors: ["电子信息工程", "通信工程", "微电子科学与工程"],
+        directions: ["嵌入式", "C/C++", "通信网络", "IC设计"],
+        intro: "福建本地 ICT 与数字化解决方案企业。",
+        requirements: "电子信息工程、通信工程、微电子科学与工程、集成电路相关专业。",
+        content: "往期岗位含 AI 算法、C/C++、Web、移动开发、硬件、软件测试等方向。",
+        note: "原简章显示网申截止日期为 2026 年 4 月 30 日，当前仅保留作岗位方向参考。",
+        reason: "专业覆盖面宽，福州本地属性强，可作为后续秋招岗位方向参考。",
+        source: "学校就业网及企业招聘入口，链接复核日期 2026-06-23",
+        url: "https://jobs.tiangong.edu.cn/correcruit/content/id/54678.html"
+      },
+      {
+        company: "中电福富信息科技有限公司",
+        title: "2027 届“新动力计划”实习生招聘",
+        city: "福州",
+        district: "福州、厦门等",
+        status: "正在投递",
+        statusClass: "open",
+        cityRank: 1,
+        majors: ["电子信息工程", "通信工程"],
+        directions: ["C/C++", "通信网络", "数据处理", "软件测试"],
+        intro: "中国电信旗下企业，聚焦云计算、人工智能、大数据、智能网络、网信安全和产业数字化。",
+        requirements: "面向 2027 年 1 月至 8 月期间毕业的应届生，本科及以上；通信工程、计算机、软件、信息安全、人工智能等相关专业可关注。",
+        content: "岗位覆盖 AI 产品/算法/应用开发、Python、C/C++、Java、安卓/鸿蒙、大数据、安全服务、渗透、运维等方向，福州岗位较多，部分岗位在厦门。",
+        duration: "3 个月及以上；实习考察时间集中在 2026 年 7-9 月。",
+        benefits: "公开简章显示提供实习补贴、免费宿舍（base 福州）、午餐补贴、意外险、运动俱乐部和文体活动；实习满 2 个月表现优异者可提前获得秋招 offer。",
+        note: "网申时间 2026-06-06 至 2026-08-05；投递方式为关注“福富公司招聘”公众号，进入“校园招聘”选择 2027 届实习岗位。",
+        reason: "福州本地央企背景软件与通信技术企业，通信工程和电子信息工程同学可重点关注 C/C++、AI 应用、大数据和运维方向。",
+        source: "福富公司招聘、牛企直聘及高校就业网，链接复核日期 2026-06-23",
+        url: "https://campus.niuqizp.com/job-v8y5zZLNL.html"
+      },
+      {
+        company: "紫讯科技",
+        title: "2027 届实习岗位",
+        city: "福州",
+        district: "福州、厦门",
+        status: "已截止仅参考",
+        statusClass: "closed",
+        cityRank: 1,
+        majors: ["电子信息工程", "通信工程"],
+        directions: ["嵌入式", "软件测试", "通信网络"],
+        intro: "公开招聘信息中提到物联网无线通信、软件研发和 AI 应用等方向。",
+        requirements: "电子信息工程、通信工程相关专业；嵌入式、系统软件、物联网无线通信、测试方向可关注。",
+        content: "往期实习岗位含 AI Agent 研发、全栈/后端、系统软件、Android、前端、软件测试等。",
+        duration: "至少 3 个月以上；每周出勤 4 天及以上者优先。",
+        benefits: "招聘页显示：专属导师制、真实项目历练、实习津贴、转正机会、扁平化氛围。",
+        reason: "适合通信和电子信息同学关注物联网无线通信、系统软件和测试方向的后续批次。",
+        source: "企业公众号转录招聘页，链接复核日期 2026-06-23",
+        url: "https://campus.niuqizp.com/job-vkU5Z5ZLZ.html"
+      },
+      {
+        company: "华讯网络",
+        title: "2027 届实习生招聘",
+        city: "福州",
+        district: "福州、厦门及多地",
+        status: "投递时请确认招聘时效性",
+        statusClass: "verify",
+        cityRank: 1,
+        majors: ["电子信息工程", "通信工程"],
+        directions: ["通信网络", "数据处理"],
+        intro: "面向云计算、网络通信、信息安全、软件开发等方向的技术服务企业。",
+        requirements: "电子信息工程、通信工程相关专业；网络通信、技术服务方向可关注。",
+        content: "解决方案、技术服务等实习岗位，涉及云计算、网络通信、信息安全和软件开发场景。",
+        reason: "通信工程同学可重点看网络通信、解决方案和技术服务方向。",
+        source: "学校就业网，链接复核日期 2026-06-23",
+        url: "https://cug.91wllm.cn/campus/view/id/998791"
+      },
+      {
+        company: "中国移动",
+        title: "2027 届暑期实习生招聘",
+        city: "福州",
+        district: "福建省内岗位需在官网筛选",
+        status: "投递时请确认招聘时效性",
+        statusClass: "verify",
+        cityRank: 3,
+        majors: ["电子信息工程", "通信工程"],
+        directions: ["无线通信", "通信网络", "数据处理"],
+        intro: "通信运营商，技术类岗位覆盖软件研发、算法、数据治理、系统运维、无线网优化等。",
+        requirements: "通信工程、电子信息工程相关专业；无线通信、通信网络、数据处理方向可关注。",
+        content: "进入官网后筛选福建/福州相关实习岗位，重点关注技术类、网络类和数据类。",
+        duration: "暑期实习",
+        note: "官方入口可用于查看实习计划，但岗位会动态上下线；投递时请确认福建岗位、毕业年份和当前截止时间。",
+        reason: "通信工程高度匹配，电子信息工程同学也可关注网络优化、系统运维和数据岗位。",
+        source: "中国移动招聘官网及公开招聘公告，链接复核日期 2026-06-23",
+        url: "https://job.10086.cn/personal/trainee"
+      },
+      {
+        company: "中国电信",
+        title: "2026 年暑期实习生计划",
+        city: "福州",
+        district: "福建省内岗位需在官网筛选",
+        status: "投递时请确认招聘时效性",
+        statusClass: "verify",
+        cityRank: 3,
+        majors: ["电子信息工程", "通信工程"],
+        directions: ["通信网络", "数据处理"],
+        intro: "通信骨干央企，岗位覆盖研发、产品、产数、网络建设、网络维护等。",
+        requirements: "通信工程、电子信息工程相关专业；通信网络、数据处理方向可关注。",
+        content: "进入中国电信招聘官网后筛选福建公司或相关分子公司实习岗位。",
+        duration: "暑期实习",
+        note: "官方入口为动态招聘门户；投递时需筛选福建公司，并核对岗位是否仍开放及是否接受 2027 届实习生。",
+        reason: "适合通信网络、产数、云网融合和运营商技术方向。",
+        source: "中国电信招聘官网及公开招聘公告，链接复核日期 2026-06-23",
+        url: "https://job.chinatelecom.com.cn/wt/TELE/web/index"
+      },
+      {
+        company: "福建省晋华集成电路有限公司",
+        title: "2027 届实习",
+        city: "泉州",
+        district: "泉州、上海",
+        status: "已截止仅参考",
+        statusClass: "closed",
+        cityRank: 2,
+        majors: ["电子信息工程", "通信工程", "微电子科学与工程"],
+        directions: ["IC设计", "芯片验证", "版图", "半导体工艺"],
+        intro: "福建省内集成电路和存储器企业，方向覆盖芯片设计、制程、验证和可靠性。",
+        requirements: "电子信息工程、通信工程、微电子科学与工程、集成电路及半导体相关专业；部分研发岗位要求硕士。",
+        content: "岗位含数字设计、模拟设计、版图设计、研发整合、研发器件、系统验证、可靠性等。",
+        duration: "至少实习 3 个月，每周不少于 4 天；网申截止日期为 2026 年 6 月 16 日。",
+        benefits: "公开页面显示实习薪资约 180-350 元/天；另列有住宿、班车、餐补、生日/节日福利、健康体检、健身房等，具体以岗位页为准。",
+        note: "网申已于 2026 年 6 月 16 日截止，当前仅保留作岗位方向参考；可关注企业后续补录或校招批次。",
+        reason: "微电子同学重点关注，本科同学优先看系统验证等本科可投方向。",
+        source: "牛企直聘公开招聘页及晋华校招简章，链接复核日期 2026-06-23",
+        url: "https://campus.niuqizp.com/schedule-7l8m5zMaM.html"
+      },
+      {
+        company: "三安半导体",
+        title: "实习生 / 应届生入口",
+        city: "厦门",
+        district: "厦门",
+        status: "投递时请确认招聘时效性",
+        statusClass: "verify",
+        cityRank: 2,
+        majors: ["微电子科学与工程", "电子信息工程"],
+        directions: ["半导体工艺", "硬件测试"],
+        intro: "化合物半导体企业，方向涉及 SiC、GaN 等。",
+        requirements: "微电子科学与工程、电子信息工程、半导体相关专业。",
+        content: "可关注制程、工艺、设备、SiC 研发、市场销售储备等岗位。",
+        note: "已替换为三安光电官网当前公布的招聘站首页。进入后请选择校园招聘或实习岗位，并确认工作地点为厦门。",
+        reason: "适合微电子和半导体工艺、器件方向同学长期关注。",
+        source: "三安光电官网招聘入口，链接复核日期 2026-06-23",
+        url: "https://sanan-e.zhiye.com/"
+      },
+      {
+        company: "厦门亿联网络技术股份有限公司",
+        title: "校园招聘 / 实习岗位入口",
+        city: "厦门",
+        district: "厦门岗位需在官网筛选",
+        status: "投递时请确认招聘时效性",
+        statusClass: "verify",
+        cityRank: 2,
+        majors: ["电子信息工程", "通信工程"],
+        directions: ["嵌入式", "C/C++", "通信网络", "硬件测试", "软件测试"],
+        intro: "总部位于厦门的统一通信与协作解决方案企业，产品覆盖桌面通信、会议设备和云端协作服务。",
+        requirements: "电子信息工程、通信工程；嵌入式、C/C++、通信网络、硬件测试和软件测试方向可重点关注。",
+        content: "进入官方校园招聘入口，筛选厦门地区的嵌入式软件、硬件研发、测试、通信协议或技术支持类实习岗位。",
+        note: "官方入口为动态招聘页面，请选择校园招聘或实习生岗位，并确认岗位仍接受 2027 届本科生投递。",
+        reason: "通信产品和嵌入式方向与两个专业的主修课程匹配度较高，适合厦门实习意向同学持续刷新。",
+        source: "亿联网络官网人才招聘入口，链接复核日期 2026-06-23",
+        url: "https://yealink.zhiye.com/Campus"
+      },
+      {
+        company: "厦门天马微电子有限公司",
+        title: "校园招聘 / 实习岗位入口",
+        city: "厦门",
+        district: "厦门岗位需在官网筛选",
+        status: "投递时请确认招聘时效性",
+        statusClass: "verify",
+        cityRank: 2,
+        majors: ["电子信息工程", "微电子科学与工程"],
+        directions: ["硬件测试", "芯片验证", "半导体工艺"],
+        intro: "天马微电子聚焦移动智能终端、车载等显示产品与相关技术，厦门设有重要生产研发基地。",
+        requirements: "微电子科学与工程、电子信息工程；半导体工艺、测试验证、产品工程和电子硬件方向可关注。",
+        content: "进入官方校园招聘入口，筛选厦门地区的工艺、设备、测试、产品、研发或电子技术类实习岗位。",
+        note: "原 Moka 入口出现循环跳转，现改为天马微电子官网。打开后点击“人才招聘”，筛选厦门和实习生岗位。",
+        reason: "适合微电子同学关注显示半导体制造、工艺和测试方向，也适合电子信息同学关注电子测试与产品工程。",
+        source: "天马微电子官网“人才招聘”入口，链接复核日期 2026-06-23",
+        url: "https://www.tianma.cn/"
+      },
+      {
+        company: "科华数据股份有限公司",
+        title: "校园招聘 / 岗前实习入口",
+        city: "厦门",
+        district: "厦门",
+        status: "投递时请确认招聘时效性",
+        statusClass: "verify",
+        cityRank: 2,
+        majors: ["电子信息工程", "通信工程", "电气工程及其自动化", "建筑电气与智能化", "电气工程与智能控制"],
+        directions: ["嵌入式", "C/C++", "硬件测试", "通信网络", "电气控制", "电力电子", "供配电"],
+        intro: "总部位于厦门的智慧电能、数据中心和新能源综合解决方案企业，业务涉及电力电子、设备控制和数字化基础设施。",
+        requirements: "电子信息工程、通信工程及电气类相关专业；嵌入式控制、硬件研发、电力电子、供配电、测试和数据中心基础设施方向可关注。",
+        content: "通过官方校园招聘入口关注研发、硬件、测试和技术支持类岗位；企业官网说明校园招聘流程包含岗前实习。",
+        benefits: "官网校园招聘页面显示：六险一金、免费班车、基地食堂、应届生宿舍等；岗前实习阶段具体适用范围请与 HR 确认。",
+        note: "已改为科华数据校园招聘直达入口。岗前实习通常与校园招聘录用流程衔接，请确认当前岗位是否接受暑期实习、到岗时间和实习周期。",
+        reason: "电力电子设备控制、数据中心供配电、嵌入式开发和通信方向与电子信息、通信及电气类课程较匹配。",
+        source: "科华数据官网人才招聘页面及校园招聘入口，链接复核日期 2026-06-23",
+        url: "https://app.mokahr.com/campus-recruitment/kehua/92510"
+      },
+      {
+        company: "戴尔科技 Dell Technologies",
+        title: "厦门实习岗位",
+        city: "厦门",
+        district: "厦门",
+        status: "投递时请确认招聘时效性",
+        statusClass: "verify",
+        cityRank: 2,
+        majors: ["电子信息工程", "通信工程"],
+        directions: ["数据处理", "软件测试", "硬件测试"],
+        intro: "全球科技企业，厦门有实习岗位页面。",
+        requirements: "电子信息工程、通信工程相关专业；硬件测试、技术支持、质量工程方向可关注。",
+        content: "以官网实时岗位为准，可关注质量、技术支持、供应链、销售技术支持等实习。",
+        duration: "暑期实习",
+        benefits: "戴尔中国公开实习信息显示：参与前沿科技项目；一对一资深导师陪伴；体验创新文化。",
+        note: "原厦门实习岗位汇总链接已失效，现改为 Dell Careers 首页。进入后搜索 Xiamen，并筛选 Internship 或学生岗位。",
+        reason: "适合想往国际化技术支持、质量工程或供应链技术方向发展的同学。",
+        source: "Dell Careers 及戴尔中国招聘公开信息，链接复核日期 2026-06-23",
+        url: "https://jobs.dell.com/"
+      },
+      {
+        company: "福建华清电子材料科技有限公司",
+        title: "实习计划",
+        city: "晋江",
+        district: "泉州晋江",
+        status: "投递时请确认招聘时效性",
+        statusClass: "verify",
+        cityRank: 2,
+        majors: ["微电子科学与工程", "电子信息工程"],
+        directions: ["半导体工艺", "硬件测试"],
+        intro: "半导体电子材料相关企业。",
+        requirements: "微电子科学与工程、电子信息工程、集成电路、半导体工艺相关方向。",
+        content: "实习岗位包括设备工程师、研发工程师等，需关注页面最新投递状态。",
+        benefits: "招聘页显示：全职薪资范围本科 13-20W、硕士 18-25W；五险一金、带薪年假、节日福利、福利食堂、包住宿。",
+        reason: "微电子同学如偏材料、工艺、设备方向，可以作为福建省内候选。",
+        source: "学校就业平台，链接复核日期 2026-06-23",
+        url: "https://career.xujc.com/2026/0305/c3959a168284/page.htm"
+      },
+      {
+        company: "宁德时代新能源科技股份有限公司",
+        title: "研发、设备与制造类实习岗位入口",
+        city: "宁德",
+        district: "宁德岗位需在官网筛选",
+        status: "投递时请确认招聘时效性",
+        statusClass: "verify",
+        cityRank: 3,
+        majors: ["电子信息工程", "电气工程及其自动化", "电气工程与智能控制"],
+        directions: ["嵌入式", "硬件测试", "电气控制", "PLC/自动化", "电力电子"],
+        intro: "新能源科技企业，福建宁德设有研发和制造基地，岗位方向覆盖电池系统、设备、制造、测试和智能控制。",
+        requirements: "电子信息工程、电气工程及其自动化、电气工程与智能控制相关方向可关注；具体专业限制以岗位页面为准。",
+        content: "进入官方招聘门户筛选实习生、福建宁德，重点关注电子硬件、设备工程、自动化控制、测试和制造技术岗位。",
+        duration: "实习周期、到岗时间及 2027 届身份要求以具体岗位页面为准。",
+        note: "旧招聘子站存在跳转异常，现改为可正常打开的宁德时代官网。打开后点击“关于我们 → 加入我们”，并确认工作地点为福建宁德。",
+        reason: "适合电子硬件、电气控制、自动化设备和电力电子方向同学。",
+        source: "宁德时代官网“加入我们”入口，链接复核日期 2026-06-23",
+        url: "https://www.catl.com/"
+      },
+      {
+        company: "ABB 厦门",
+        title: "电气与自动化类实习岗位入口",
+        city: "厦门",
+        district: "厦门岗位需在官网筛选",
+        status: "投递时请确认招聘时效性",
+        statusClass: "verify",
+        cityRank: 2,
+        majors: ["电气工程及其自动化", "建筑电气与智能化", "电气工程与智能控制"],
+        directions: ["电气控制", "PLC/自动化", "电力电子", "供配电", "建筑智能化", "电气调试"],
+        intro: "ABB 在厦门布局电气产品与自动化相关业务，岗位方向涉及配电、电气控制、产品测试、工程技术和制造。",
+        requirements: "电气工程及其自动化、建筑电气与智能化、电气工程与智能控制相关专业可关注。",
+        content: "在 ABB Careers 搜索 Xiamen，并筛选 Internship / Early Careers，关注电气、自动化、测试、研发和工程支持岗位。",
+        duration: "实习周期和到岗要求以具体职位页面为准。",
+        note: "已改为 ABB Careers 首页。搜索 Xiamen，并筛选 Internship / Early Careers；必须确认职位地点为 Xiamen, Fujian, China。",
+        reason: "三个电气类专业均可重点关注，尤其适合供配电、电气控制和自动化方向。",
+        source: "ABB Careers，链接复核日期 2026-06-23",
+        url: "https://careers.abb/global/en/home"
+      },
+      {
+        company: "中国铁塔",
+        title: "实习生招聘入口",
+        city: "福州",
+        district: "福建省内岗位需在官网筛选",
+        status: "投递时请确认招聘时效性",
+        statusClass: "verify",
+        cityRank: 3,
+        majors: ["电子信息工程", "通信工程"],
+        directions: ["通信网络", "数据处理"],
+        intro: "通信基础设施央企，业务涉及通信铁塔、室分系统、能源、智联等。",
+        requirements: "通信工程、电子信息工程相关专业；通信网络、数智化方向可关注。",
+        content: "进入官网后筛选福建相关通信技术、数智化、软件开发或运维类实习岗位。",
+        reason: "通信工程同学可关注通信基础设施、网络建设维护和数智化方向。",
+        source: "中国铁塔招聘官网，链接复核日期 2026-06-23",
+        url: "https://zhaopin.chinatowercom.cn/recruit/"
+      },
+      {
+        company: "福龙马集团股份有限公司",
+        title: "2026 年暑期实习生招募",
+        city: "龙岩",
+        district: "龙岩及实际岗位地点",
+        status: "正在投递",
+        statusClass: "open",
+        cityRank: 4,
+        majors: ["电气工程及其自动化", "电气工程与智能控制"],
+        directions: ["电气控制", "PLC/自动化", "电气调试"],
+        intro: "福龙马集团是福建省内上市公司，业务覆盖环卫智能装备制造和环境产业生态运营。",
+        requirements: "面向 2027、2028 届高校大学生，本科及以上；电气工程及其自动化等相关专业可投电气工程实习生。",
+        content: "电气工程实习生协助电气产品研发、图纸维护、零部件跟进、技术资料编写归档，并配合处理现场技术问题。",
+        duration: "暑期实习；网申时间 2026-06-16 至 2026-07-14。",
+        benefits: "公开信息显示提供实习津贴、食宿补贴、专属导师辅导、系统化培训；表现优秀者可直通秋招 offer。",
+        note: "官网/公众号投递需按页面提示进入“福龙马集团官网-人才招聘-校园招聘”或扫描官方二维码。",
+        reason: "福建省内电气工程实习机会，适合电气控制、智能控制和设备研发方向同学。",
+        source: "福龙马集团招聘公众号及牛企直聘，链接复核日期 2026-06-23",
+        url: "https://campus.niuqizp.com/job-vmk5zzLt5.html"
+      }
+    ];
+
+    const state = {
+      major: "all",
+      direction: "all",
+      city: "all",
+      status: "all",
+      query: ""
+    };
+
+    const majorChips = document.getElementById("majorChips");
+    const directionChips = document.getElementById("directionChips");
+    const jobList = document.getElementById("jobList");
+    const resultCount = document.getElementById("resultCount");
+    const searchInput = document.getElementById("searchInput");
+    const citySelect = document.getElementById("citySelect");
+    const statusSelect = document.getElementById("statusSelect");
+    const resetButton = document.getElementById("resetButton");
+    const toast = document.getElementById("toast");
+    const visitCount = document.getElementById("visitCount");
+
+    function renderMajorChips() {
+      const chips = [{ id: "all", label: "全部专业" }, ...majors.map(major => ({ id: major.id, label: major.id }))];
+
+      majorChips.innerHTML = chips.map(major => {
+        const count = major.id === "all" ? jobs.length : jobs.filter(job => job.majors.includes(major.id)).length;
+        const active = state.major === major.id ? " active" : "";
+        return `
+          <button class="filter-chip${active}" type="button" data-major="${major.id}">
+            ${major.label}<span class="chip-count">${count}</span>
+          </button>
+        `;
+      }).join("");
+
+      majorChips.querySelectorAll("[data-major]").forEach(button => {
+        button.addEventListener("click", () => {
+          state.major = button.dataset.major;
+          render();
+        });
+      });
+    }
+
+    function renderDirectionChips() {
+      const chips = ["all", ...directions];
+      directionChips.innerHTML = chips.map(direction => {
+        const label = direction === "all" ? "全部方向" : direction;
+        const active = state.direction === direction ? " active" : "";
+        return `<button class="filter-chip${active}" type="button" data-direction="${direction}">${label}</button>`;
+      }).join("");
+
+      directionChips.querySelectorAll("[data-direction]").forEach(button => {
+        button.addEventListener("click", () => {
+          state.direction = button.dataset.direction;
+          render();
+        });
+      });
+    }
+
+    function jobMatches(job) {
+      const haystack = [
+        job.company,
+        job.title,
+        job.city,
+        job.district,
+        job.intro,
+        job.requirements,
+        job.content,
+        job.duration || "",
+        job.benefits || "",
+        job.note || "",
+        job.reason,
+        job.majors.join(" "),
+        job.directions.join(" ")
+      ].join(" ").toLowerCase();
+
+      const query = state.query.trim().toLowerCase();
+      return (
+        (state.major === "all" || job.majors.includes(state.major)) &&
+        (state.direction === "all" || job.directions.includes(state.direction)) &&
+        (state.city === "all" || job.city === state.city) &&
+        (state.status === "all" || job.status === state.status) &&
+        (!query || haystack.includes(query))
+      );
+    }
+
+    function sortJobs(list) {
+      return [...list].sort((a, b) => {
+        const statusOrder = { "正在投递": 1, "投递时请确认招聘时效性": 2, "关注补录": 3, "已截止仅参考": 4 };
+        const statusDiff = (statusOrder[a.status] || 9) - (statusOrder[b.status] || 9);
+        if (statusDiff) return statusDiff;
+        return a.cityRank - b.cityRank;
+      });
+    }
+
+    function renderJobs() {
+      const filtered = sortJobs(jobs.filter(jobMatches));
+      resultCount.textContent = `当前显示 ${filtered.length} 条岗位，共 ${jobs.length} 条`;
+
+      if (!filtered.length) {
+        jobList.innerHTML = `<div class="empty">没有匹配的岗位。可以清空筛选，或换一个专业方向试试。</div>`;
+        return;
+      }
+
+      jobList.innerHTML = filtered.map(job => `
+        <article class="job-card">
+          <div class="job-top">
+            <div>
+              <h3 class="company-name">${job.company}</h3>
+              <p class="job-title">${job.title}</p>
+            </div>
+            <span class="status ${job.statusClass}">${job.status}</span>
+          </div>
+
+          <div class="meta-row">
+            <span class="meta">${job.city} · ${job.district}</span>
+            ${job.directions.map(direction => `<span class="meta">${direction}</span>`).join("")}
+          </div>
+
+          <div class="tag-row">
+            ${job.majors.map(major => `<span class="fit-tag major">${major}</span>`).join("")}
+          </div>
+
+          <div class="field"><strong>企业简介</strong><p>${job.intro}</p></div>
+          <div class="field"><strong>需求专业</strong><p>${job.requirements}</p></div>
+          <div class="field"><strong>实习内容</strong><p>${job.content}</p></div>
+          ${job.duration ? `<div class="field"><strong>实习期限</strong><p>${job.duration}</p></div>` : ""}
+          ${job.benefits ? `<div class="field"><strong>实习福利 / 工作强度</strong><p>${job.benefits}</p></div>` : ""}
+          ${job.note ? `<div class="field"><strong>投递说明</strong><p>${job.note}</p></div>` : ""}
+          <div class="field"><strong>推荐理由</strong><p>${job.reason}</p></div>
+
+          <div class="link-box">
+            <div class="url">${job.url}</div>
+            <div class="button-row">
+              <a class="action primary" href="${job.url}" target="_blank" rel="noopener">打开报名页</a>
+              <button class="action" type="button" data-copy="${job.url}">复制网址</button>
+            </div>
+            <p class="source">${job.source}</p>
+          </div>
+        </article>
+      `).join("");
+
+      jobList.querySelectorAll("[data-copy]").forEach(button => {
+        button.addEventListener("click", () => copyUrl(button.dataset.copy));
+      });
+    }
+
+    async function copyUrl(url) {
+      try {
+        await navigator.clipboard.writeText(url);
+        showToast("已复制报名链接");
+      } catch (error) {
+        window.prompt("请复制报名链接", url);
+      }
+    }
+
+    let toastTimer;
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 1500);
+    }
+
+    async function updateVisitCount() {
+      const endpoint = "https://ubiquitous-platypus-3013b2.netlify.app/.netlify/functions/visit-count";
+
+      for (const method of ["POST", "GET"]) {
+        try {
+          const response = await fetch(endpoint, {
+            method,
+            headers: { "accept": "application/json" },
+            cache: "no-store"
+          });
+
+          if (!response.ok) continue;
+
+          const data = await response.json();
+          const count = Number(data.count);
+          if (!Number.isFinite(count)) continue;
+
+          localStorage.setItem("internshipVisitCount", String(count));
+          visitCount.textContent = new Intl.NumberFormat("zh-CN").format(count);
+          return;
+        } catch (error) {
+          // GET below provides a read-only fallback when incrementing fails.
+        }
+      }
+
+      let lastCount = 0;
+      try {
+        lastCount = Number(localStorage.getItem("internshipVisitCount"));
+      } catch (error) {
+        lastCount = 0;
+      }
+
+      visitCount.textContent = Number.isFinite(lastCount) && lastCount > 0
+        ? new Intl.NumberFormat("zh-CN").format(lastCount)
+        : "统计服务维护中";
+    }
+
+    function render() {
+      renderMajorChips();
+      renderDirectionChips();
+      renderJobs();
+    }
+
+    searchInput.addEventListener("input", event => {
+      state.query = event.target.value;
+      renderJobs();
+    });
+
+    citySelect.addEventListener("change", event => {
+      state.city = event.target.value;
+      renderJobs();
+    });
+
+    statusSelect.addEventListener("change", event => {
+      state.status = event.target.value;
+      renderJobs();
+    });
+
+    resetButton.addEventListener("click", () => {
+      state.major = "all";
+      state.direction = "all";
+      state.city = "all";
+      state.status = "all";
+      state.query = "";
+      searchInput.value = "";
+      citySelect.value = "all";
+      statusSelect.value = "all";
+      render();
+    });
+
+    render();
+    updateVisitCount();
+  </script>
+</body>
+</html>
