@@ -947,6 +947,7 @@
         note: "投递邮箱：XWWLHR@star-net.cn；邮件标题请注明“销售经理实习生+学校+姓名”。",
         reason: "福州本地通信设备与网络产品企业，电子信息工程、通信工程同学如愿意尝试技术型销售、渠道和客户方案方向，可重点投递。",
         source: "用户上传 Word 招聘简章及星网锐捷官网，链接复核日期 2026-06-25",
+        actionLabel: "查看企业官网",
         url: "https://www.star-net.cn/"
       },
       {
@@ -1608,7 +1609,7 @@
           <div class="link-box">
             <div class="url">${job.url}</div>
             <div class="button-row">
-              <a class="action primary" href="${job.url}" target="_blank" rel="noopener">打开报名页</a>
+              <a class="action primary" href="${job.url}" target="_blank" rel="noopener">${job.actionLabel || "打开报名页"}</a>
               <button class="action" type="button" data-copy="${job.url}">复制网址</button>
             </div>
             <p class="source">${job.source}</p>
