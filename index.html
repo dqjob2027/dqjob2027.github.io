@@ -538,6 +538,13 @@
       color: #fff;
     }
 
+    .action.disabled {
+      border-color: var(--line);
+      background: #eef2f7;
+      color: var(--muted);
+      cursor: default;
+    }
+
     .empty {
       border: 1px dashed var(--line-strong);
       border-radius: var(--radius);
@@ -888,7 +895,7 @@
       }
     ];
 
-    const directions = ["嵌入式", "C/C++", "硬件测试", "软件测试", "无线通信", "通信网络", "数据处理", "IC设计", "芯片验证", "版图", "EDA", "半导体工艺", "电气控制", "PLC/自动化", "电力电子", "供配电", "建筑智能化", "楼宇自控", "弱电系统", "电气调试"];
+    const directions = ["嵌入式", "C/C++", "电路设计", "PCB设计", "硬件测试", "软件测试", "无线通信", "通信网络", "数据处理", "IC设计", "芯片验证", "版图", "EDA", "半导体工艺", "电气控制", "PLC/自动化", "电力电子", "供配电", "建筑智能化", "楼宇自控", "弱电系统", "电气调试"];
 
     const jobs = [
       {
@@ -972,6 +979,30 @@
         copyLabel: "复制投递邮箱",
         copyValue: "fjgy_kj@163.com",
         url: "mailto:fjgy_kj@163.com?subject=%E5%A7%93%E5%90%8D%2B%E5%AD%A6%E6%A0%A1%2B%E4%B8%93%E4%B8%9A%2B%E5%BA%94%E8%81%98%E6%99%BA%E8%83%BD%E4%BA%8B%E4%B8%9A%E9%83%A8%E5%AE%9E%E4%B9%A0%E7%94%9F"
+      },
+      {
+        company: "福州易联星拓通信科技有限公司",
+        title: "硬件设计实习生（电路/PCB方向）",
+        city: "福州",
+        district: "闽侯县上街镇星网锐捷科技园",
+        status: "正在投递",
+        statusClass: "open",
+        cityRank: 1,
+        majors: ["电子信息工程", "通信工程", "微电子科学与工程", "电气工程及其自动化", "电气工程与智能控制"],
+        directions: ["电路设计", "PCB设计", "硬件测试", "嵌入式"],
+        intro: "企业官网标题显示为福州易联星拓通信科技有限公司；岗位办公地点位于星网锐捷科技园内，招聘要求面向硬件工程团队，实习生将在资深工程师指导下参与真实产品的电路设计、PCB布局和硬件调试。",
+        requirements: "电子信息工程、通信工程、微电子科学与工程、电气工程及其自动化、电气工程与智能控制等相关专业本科在校生；要求掌握模拟电路、数字电路基础，了解常用元器件，熟悉至少一种 PCB 设计工具，如 Altium Designer、Cadence Allegro、PADS 等。",
+        content: "协助完成硬件方案的电路原理图设计、仿真与评审；在指导下完成 PCB 布局设计，兼顾信号完整性、电源完整性和 EMC 基础要求；参与电路板功能测试、性能验证、问题排查，并整理设计文档、BOM 清单和测试报告。",
+        duration: "需保证每周至少 3 天、持续 3 个月以上的实习时间。",
+        benefits: "周一至周五，每天约 8 小时；实习津贴 100 元/天；不提供住宿和餐补。",
+        note: "投递邮箱：liqiaozong@elink-star.com；官网：www.elink-star.com；联系电话：13950495543、0591-38201116；传真：0591-38201115；实习地点：星网锐捷科技园。",
+        reason: "电路、PCB、硬件调试和测试内容与电子信息、通信、微电子及部分电气控制方向课程匹配度高，适合想积累硬件项目经验的同学。",
+        source: "用户上传 Word 招聘要求、补充联系方式及企业官网，链接复核日期 2026-06-30",
+        actionLabel: "发送投递邮件",
+        displayUrl: "liqiaozong@elink-star.com；http://www.elink-star.com",
+        copyLabel: "复制投递邮箱",
+        copyValue: "liqiaozong@elink-star.com",
+        url: "mailto:liqiaozong@elink-star.com?subject=%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%AE%9E%E4%B9%A0%E7%94%9F%EF%BC%88%E7%94%B5%E8%B7%AF%2FPCB%E6%96%B9%E5%90%91%EF%BC%89-%E5%A7%93%E5%90%8D-%E5%AD%A6%E6%A0%A1-%E4%B8%93%E4%B8%9A"
       },
       {
         company: "福建星网锐捷通讯股份有限公司（研发实习）",
@@ -1731,8 +1762,8 @@
           <div class="link-box">
             <div class="url">${job.displayUrl || job.url}</div>
             <div class="button-row">
-              <a class="action primary" href="${job.url}" target="_blank" rel="noopener">${job.actionLabel || "打开报名页"}</a>
-              <button class="action" type="button" data-copy="${job.copyValue || job.url}">${job.copyLabel || "复制网址"}</button>
+              ${job.url ? `<a class="action primary" href="${job.url}" target="_blank" rel="noopener">${job.actionLabel || "打开报名页"}</a>` : `<span class="action primary disabled">${job.actionLabel || "等待投递方式"}</span>`}
+              ${(job.copyValue || job.url) ? `<button class="action" type="button" data-copy="${job.copyValue || job.url}">${job.copyLabel || "复制网址"}</button>` : ""}
             </div>
             <p class="source">${job.source}</p>
           </div>
