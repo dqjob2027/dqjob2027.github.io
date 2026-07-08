@@ -139,16 +139,160 @@
       white-space: nowrap;
     }
 
-    .update-date {
+    .update-tools {
       flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       border: 1px solid var(--line);
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.9);
-      padding: 7px 11px;
+      padding: 5px 6px 5px 11px;
       color: var(--muted);
       font-size: 13px;
       font-weight: 700;
       white-space: nowrap;
+    }
+
+    .update-date {
+      line-height: 1;
+    }
+
+    .log-button {
+      border: 1px solid #b9cff1;
+      border-radius: 999px;
+      background: #edf5ff;
+      color: var(--blue);
+      padding: 5px 9px;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .log-button:hover,
+    .log-button:focus-visible {
+      background: var(--blue);
+      color: #fff;
+      outline: none;
+    }
+
+    .log-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      background: rgba(24, 34, 49, 0.42);
+    }
+
+    .log-modal-backdrop[hidden] {
+      display: none;
+    }
+
+    .log-modal {
+      width: min(720px, calc(100vw - 28px));
+      max-height: min(78vh, 720px);
+      overflow: auto;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .log-modal-head {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+    }
+
+    .log-modal-head h2 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .log-close {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+      font-weight: 900;
+    }
+
+    .log-close:hover,
+    .log-close:focus-visible {
+      border-color: var(--blue);
+      color: var(--blue);
+      outline: none;
+    }
+
+    .log-list {
+      display: grid;
+      gap: 12px;
+      padding: 16px 18px 18px;
+    }
+
+    .log-entry {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 13px;
+      background: #fbfdff;
+    }
+
+    .log-date {
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-weight: 850;
+    }
+
+    .log-items {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .log-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 8px;
+      align-items: start;
+      color: #344054;
+      font-size: 14px;
+    }
+
+    .log-kind {
+      border-radius: 999px;
+      padding: 2px 7px;
+      background: #eef4ff;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .log-kind.work {
+      background: #ecfdf3;
+      color: var(--green);
+    }
+
+    .log-foot {
+      margin: 0;
+      padding: 0 18px 18px;
+      color: var(--muted);
+      font-size: 13px;
     }
 
     .board-switch {
@@ -693,7 +837,10 @@
         <div>
           <div class="title-row">
             <h1>2027届本科生福建省就业机会</h1>
-            <span class="update-date">更新日期：2026年7月7日</span>
+            <div class="update-tools">
+              <span class="update-date">更新日期：2026年7月7日</span>
+              <button class="log-button" type="button" data-log-open aria-haspopup="dialog">更新日志</button>
+            </div>
           </div>
           <nav class="board-switch" aria-label="就业与实习机会切换">
             <a class="active" href="./jobs.html" aria-current="page">找工作</a>
@@ -710,7 +857,16 @@
         </div>
       </div>
     </header>
-
+    <div class="log-modal-backdrop" data-log-modal hidden>
+      <section class="log-modal" role="dialog" aria-modal="true" aria-labelledby="logTitle">
+        <div class="log-modal-head">
+          <h2 id="logTitle">历史更新日志</h2>
+          <button class="log-close" type="button" data-log-close aria-label="关闭更新日志">×</button>
+        </div>
+        <div class="log-list" id="updateLogList"></div>
+        <p class="log-foot">仅记录本站上线后的主要新增卡片和入口维护，岗位状态仍以企业页面为准。</p>
+      </section>
+    </div>
     <main class="wrap">
       <section class="section" aria-labelledby="filterTitle">
         <div class="section-head">
@@ -1358,6 +1514,35 @@
         url: "https://www.jhicc.com/recruiting"
       }
     ];
+    const updateLogs = [
+      {
+        date: "2026年7月7日",
+        items: [
+          { kind: "实习", title: "福建福顺半导体制造有限公司", detail: "新增模拟版图设计工程师（27届实习+就业）" },
+          { kind: "实习", title: "福州派利德电子", detail: "新增嵌入式软件工程师实习生入口" },
+          { kind: "实习", title: "福州思飞", detail: "新增嵌入式软件实习生入口" },
+          { kind: "就业", title: "福建福顺半导体制造有限公司", detail: "新增模拟版图设计工程师就业衔接卡片" }
+        ]
+      },
+      {
+        date: "2026年7月6日",
+        items: [
+          { kind: "实习", title: "福州海联讯科技有限公司", detail: "新增数据工程师（实习生）" },
+          { kind: "实习", title: "福州市许天电子", detail: "新增 ARM 开发实习生" },
+          { kind: "就业", title: "福建新大陆通信科技股份有限公司", detail: "新增嵌入式软件工程师（仅2027届）" },
+          { kind: "就业", title: "福州京东方光电科技有限公司", detail: "更新为 2027 届先锋京英计划（福州）" },
+          { kind: "链接", title: "国机陆原、中国移动、晋华、福龙马等", detail: "替换或修复不稳定投递入口" }
+        ]
+      },
+      {
+        date: "2026年7月3日",
+        items: [
+          { kind: "实习", title: "福州易兆微电子有限公司、中电福富等", detail: "补充福州本地嵌入式、通信网络和技术服务方向卡片" },
+          { kind: "实习", title: "福建省国源教育科技有限公司、福州易联星拓通信科技有限公司", detail: "加入用户提供的企业实习信息" },
+          { kind: "就业", title: "福建新意科技、联芯集成电路、新大陆、京东方等", detail: "整理 2027 届就业页并修复一批入口" }
+        ]
+      }
+    ];
 
     const state = {
       major: "all",
@@ -1377,6 +1562,10 @@
     const resetButton = document.getElementById("resetButton");
     const toast = document.getElementById("toast");
     const visitCount = document.getElementById("visitCount");
+    const logOpenButton = document.querySelector("[data-log-open]");
+    const logModal = document.querySelector("[data-log-modal]");
+    const logCloseButton = document.querySelector("[data-log-close]");
+    const updateLogList = document.getElementById("updateLogList");
 
     function renderMajorChips() {
       const chips = [{ id: "all", label: "全部专业" }, ...majors.map(major => ({ id: major.id, label: major.id }))];
@@ -1519,6 +1708,36 @@
       clearTimeout(toastTimer);
       toastTimer = setTimeout(() => toast.classList.remove("show"), 1500);
     }
+    function renderUpdateLogs() {
+      if (!updateLogList) return;
+      updateLogList.innerHTML = updateLogs.map(entry => `
+        <article class="log-entry">
+          <p class="log-date">${entry.date}</p>
+          <ul class="log-items">
+            ${entry.items.map(item => `
+              <li class="log-item">
+                <span class="log-kind ${item.kind === "就业" ? "work" : ""}">${item.kind}</span>
+                <span><strong>${item.title}</strong>：${item.detail}</span>
+              </li>
+            `).join("")}
+          </ul>
+        </article>
+      `).join("");
+    }
+
+    function openUpdateLog() {
+      if (!logModal) return;
+      logModal.hidden = false;
+      document.body.style.overflow = "hidden";
+      logCloseButton?.focus();
+    }
+
+    function closeUpdateLog() {
+      if (!logModal) return;
+      logModal.hidden = true;
+      document.body.style.overflow = "";
+      logOpenButton?.focus();
+    }
 
     async function updateVisitCount() {
       const endpoint = "https://ubiquitous-platypus-3013b2.netlify.app/.netlify/functions/visit-count";
@@ -1578,6 +1797,14 @@
       renderJobs();
     });
 
+    logOpenButton?.addEventListener("click", openUpdateLog);
+    logCloseButton?.addEventListener("click", closeUpdateLog);
+    logModal?.addEventListener("click", event => {
+      if (event.target === logModal) closeUpdateLog();
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && logModal && !logModal.hidden) closeUpdateLog();
+    });
     resetButton.addEventListener("click", () => {
       state.major = "all";
       state.direction = "all";
@@ -1590,6 +1817,7 @@
       render();
     });
 
+    renderUpdateLogs();
     render();
     updateVisitCount();
   </script>
