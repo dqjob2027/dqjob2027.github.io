@@ -521,14 +521,6 @@
       overflow-wrap: anywhere;
     }
 
-    .platform-major-divider {
-      border-top: 1px solid var(--line);
-      padding-top: 9px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
     .platform-link span:last-child {
       color: inherit;
       font-size: 15px;
@@ -2650,10 +2642,6 @@
         url.searchParams.set(key, undergraduateSearches[majorIndex].query);
         link.href = url.href;
       });
-      const heading = document.createElement("div");
-      heading.className = "platform-major-divider";
-      heading.textContent = "研究生专业";
-      group.append(heading);
       for (const search of graduateSearches) {
         const url = new URL(base);
         url.searchParams.set(key, search.query);
