@@ -516,6 +516,19 @@
       color: var(--platform-color, var(--blue));
     }
 
+    .platform-link span:first-child {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .platform-major-divider {
+      border-top: 1px solid var(--line);
+      padding-top: 9px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
     .platform-link span:last-child {
       color: inherit;
       font-size: 15px;
@@ -847,7 +860,7 @@
             <a class="active" href="./jobs.html" aria-current="page">找工作</a>
             <a href="./">找实习</a>
           </nav>
-          <p class="lead">面向六个本科专业及新一代电子信息技术（含量子技术等）、交通运输工程两个研究生专业，全国岗位均可浏览。</p>
+          <p class="lead">面向六个本科专业及新一代电子信息技术（含量子技术等）、交通运输工程、电气工程三个研究生专业，全国岗位均可浏览。</p>
           <section class="notice-panel hero-notice" aria-labelledby="noticeTitle">
             <h2 id="noticeTitle">投递提醒</h2>
             <ul class="notice-list">
@@ -904,12 +917,12 @@
         <section class="platform-search" aria-labelledby="platformSearchTitle">
           <div class="platform-search-head">
             <h2 id="platformSearchTitle">五大招聘平台实时检索</h2>
-            <p class="section-subtitle">打开平台后建议切换为“最新发布”，并核对招聘届别与工作城市。下方原有搜索链接部分按福建地区预设。</p>
+            <p class="section-subtitle">打开平台后建议切换为“最新发布”，并核对招聘届别与工作城市。本科专业链接按福建地区预设，研究生专业链接为全国搜索。</p>
           </div>
           <div class="platform-grid">
             <article class="platform-card" style="--platform-color: #00a76f;">
               <h3>BOSS直聘</h3>
-              <p>福州市岗位搜索结果</p>
+              <p>本科福建定向 · 研究生全国</p>
               <div class="platform-links">
                 <a class="platform-link" href="https://www.zhipin.com/web/geek/job?query=%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BA%94%E5%B1%8A%E7%94%9F&amp;city=101230100" target="_blank" rel="noopener"><span>电子信息工程</span><span>→</span></a>
                 <a class="platform-link" href="https://www.zhipin.com/web/geek/job?query=%E9%80%9A%E4%BF%A1%E5%BA%94%E5%B1%8A%E7%94%9F&amp;city=101230100" target="_blank" rel="noopener"><span>通信工程</span><span>→</span></a>
@@ -922,7 +935,7 @@
 
             <article class="platform-card" style="--platform-color: #e5484d;">
               <h3>前程无忧 51JOB</h3>
-              <p>福州市岗位搜索结果</p>
+              <p>本科福建定向 · 研究生全国</p>
               <div class="platform-links">
                 <a class="platform-link" href="https://we.51job.com/pc/search?jobArea=090200&amp;keyword=%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BA%94%E5%B1%8A%E7%94%9F" target="_blank" rel="noopener"><span>电子信息工程</span><span>→</span></a>
                 <a class="platform-link" href="https://we.51job.com/pc/search?jobArea=090200&amp;keyword=%E9%80%9A%E4%BF%A1%E5%BA%94%E5%B1%8A%E7%94%9F" target="_blank" rel="noopener"><span>通信工程</span><span>→</span></a>
@@ -935,7 +948,7 @@
 
             <article class="platform-card" style="--platform-color: #2563eb;">
               <h3>智联招聘</h3>
-              <p>福州市岗位搜索结果</p>
+              <p>本科福建定向 · 研究生全国</p>
               <div class="platform-links">
                 <a class="platform-link" href="https://sou.zhaopin.com/?jl=%E7%A6%8F%E5%B7%9E&amp;kw=%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BA%94%E5%B1%8A%E7%94%9F" target="_blank" rel="noopener"><span>电子信息工程</span><span>→</span></a>
                 <a class="platform-link" href="https://sou.zhaopin.com/?jl=%E7%A6%8F%E5%B7%9E&amp;kw=%E9%80%9A%E4%BF%A1%E5%BA%94%E5%B1%8A%E7%94%9F" target="_blank" rel="noopener"><span>通信工程</span><span>→</span></a>
@@ -948,7 +961,7 @@
 
             <article class="platform-card" style="--platform-color: #f08c00;">
               <h3>猎聘</h3>
-              <p>福建省岗位关键词结果</p>
+              <p>本科福建定向 · 研究生全国</p>
               <div class="platform-links">
                 <a class="platform-link" href="https://www.liepin.com/zhaopin/?key=%E7%A6%8F%E5%B7%9E%20%E5%B5%8C%E5%85%A5%E5%BC%8F%20%E5%BA%94%E5%B1%8A%E7%94%9F" target="_blank" rel="noopener"><span>电子信息工程</span><span>→</span></a>
                 <a class="platform-link" href="https://www.liepin.com/zhaopin/?key=%E7%A6%8F%E5%BB%BA%20%E9%80%9A%E4%BF%A1%20%E5%BA%94%E5%B1%8A%E7%94%9F" target="_blank" rel="noopener"><span>通信工程</span><span>→</span></a>
@@ -961,7 +974,7 @@
 
             <article class="platform-card" style="--platform-color: #7c3aed;">
               <h3>实习僧</h3>
-              <p>福建省校招岗位关键词结果</p>
+              <p>本科福建定向 · 研究生全国</p>
               <div class="platform-links">
                 <a class="platform-link" href="https://www.shixiseng.com/campus?keyword=%E7%A6%8F%E5%B7%9E%E5%B5%8C%E5%85%A5%E5%BC%8F" target="_blank" rel="noopener"><span>电子信息工程</span><span>→</span></a>
                 <a class="platform-link" href="https://www.shixiseng.com/campus?keyword=%E7%A6%8F%E5%BB%BA%E9%80%9A%E4%BF%A1" target="_blank" rel="noopener"><span>通信工程</span><span>→</span></a>
@@ -1051,12 +1064,35 @@
         focus: "交通规划 / 智能交通 / 轨道交通",
         description: "研究生方向，关注交通规划、交通数据、轨道交通及运输系统。",
         keywords: ["交通规划", "智能交通", "轨道交通", "数据处理"]
+      },
+      {
+        id: "电气工程",
+        code: "EEG",
+        focus: "电力系统 / 电力电子 / 智能电网",
+        description: "研究生方向，关注电网分析、电力系统软件、电力电子与新能源并网。",
+        keywords: ["电气工程", "电力电子", "电力系统", "智能电网"]
       }
     ];
 
     const directions = ["嵌入式", "C/C++", "电路设计", "硬件测试", "软件测试", "无线通信", "通信网络", "数据处理", "IC设计", "芯片验证", "版图", "EDA", "半导体工艺", "电气控制", "PLC/自动化", "电力电子", "供配电", "建筑智能化", "楼宇自控", "弱电系统", "电气调试", "量子技术", "交通规划", "智能交通", "轨道交通"];
 
     const jobs = [
+      {
+        company: "杭州沃瑞电力科技有限公司",
+        title: "2027届算法工程师（电气工程硕士）",
+        city: "杭州", district: "西湖区", cityRank: 5,
+        status: "正在投递", statusClass: "open",
+        majors: ["电气工程"],
+        directions: ["电力电子", "数据处理", "C/C++"],
+        intro: "研发电力系统调度高级应用软件和电网运行优化分析产品的高新技术企业。",
+        requirements: "2027届硕士及以上，电气工程等相关专业；具备C++/Python、人工智能或机器学习基础。",
+        content: "电力系统算法研发与应用，具体岗位内容以企业面试沟通为准。",
+        benefits: "简章列有双休、五险一金、补充商业保险及带薪年假；具体薪酬以录用通知为准。",
+        note: "简章提供邮件投递：xhuang@mrpower.cn、yncui@mrpower.cn；邮件请注明姓名、学校、专业及应聘岗位。",
+        source: "华中科技大学就业网杭州沃瑞电力2027校园招聘简章，链接复核日期 2026-09-24",
+        actionLabel: "查看简章及投递邮箱",
+        url: "https://job.hust.edu.cn/zpinfo1/2435010.htm"
+      },
       {
         company: "量智开物（北京）科技有限公司",
         title: "2027届量子理论与算法研究员/工程师",
@@ -2034,6 +2070,9 @@
       {
         date: "2026年9月24日",
         items: [
+          { kind: "就业", title: "杭州沃瑞电力", detail: "新增电气工程研究生算法工程师卡片，明确硕士学历与2027届要求。" },
+          { kind: "实习", title: "北京科东电力控制系统、清华大学能源互联网创新研究院", detail: "实习页新增2张电气工程研究生岗位卡片。" },
+          { kind: "专业", title: "电气工程", detail: "新增第三个研究生专业；五大招聘平台均补齐三个研究生专业的全国搜索入口。" },
           { kind: "就业", title: "量智开物、浙江交通集团技术研究总院、顺络集团、北京地铁", detail: "新增4张2027届校招卡片，覆盖量子技术、电子研发、交通工程与轨道交通方向。" },
           { kind: "实习", title: "量智开物、杭州市交通规划设计研究院", detail: "实习页新增北京量智融合科研和杭州交通规划设计卡片；新增两个研究生专业筛选并支持全国城市。" }
         ]
@@ -2286,6 +2325,41 @@
       status: "all",
       query: ""
     };
+
+    const graduateSearches = [
+      { major: "新一代电子信息技术（含量子技术等）", query: "量子技术 电子信息 2027 校招" },
+      { major: "交通运输工程", query: "交通运输工程 2027 校招" },
+      { major: "电气工程", query: "电气工程 硕士 2027 校招" }
+    ];
+    const platformSearches = [
+      ["https://www.zhipin.com/web/geek/job", "query"],
+      ["https://we.51job.com/pc/search", "keyword"],
+      ["https://sou.zhaopin.com/", "kw"],
+      ["https://www.liepin.com/zhaopin/", "key"],
+      ["https://www.shixiseng.com/campus", "keyword"]
+    ];
+    document.querySelectorAll(".platform-card .platform-links").forEach((group, index) => {
+      const [base, key] = platformSearches[index];
+      const heading = document.createElement("div");
+      heading.className = "platform-major-divider";
+      heading.textContent = "研究生专业 · 全国";
+      group.append(heading);
+      for (const search of graduateSearches) {
+        const url = new URL(base);
+        url.searchParams.set(key, search.query);
+        const link = document.createElement("a");
+        link.className = "platform-link";
+        link.href = url.href;
+        link.target = "_blank";
+        link.rel = "noopener";
+        const label = document.createElement("span");
+        label.textContent = search.major;
+        const arrow = document.createElement("span");
+        arrow.textContent = "→";
+        link.append(label, arrow);
+        group.append(link);
+      }
+    });
 
     const majorChips = document.getElementById("majorChips");
     const directionChips = document.getElementById("directionChips");
