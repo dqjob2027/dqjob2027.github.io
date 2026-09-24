@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>求职工具｜电气学院就业日历</title>
+  <style>
+    :root{font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;color:#17202c;background:#f8fafc}
+    *{box-sizing:border-box}body{margin:0}main{width:min(760px,100%);margin:auto;padding:64px 24px 96px}
+    .eyebrow{margin:0 0 12px;color:#1f5fbf;font-size:14px;font-weight:700;letter-spacing:.08em}h1{margin:0;font-size:clamp(32px,5vw,48px);letter-spacing:-.035em}
+    .lead{margin:16px 0 32px;color:#596579;line-height:1.8}.tool{padding:28px;border:1px solid #dce3ec;border-radius:12px;background:#fff;box-shadow:0 8px 28px rgba(20,45,75,.06)}
+    h2{margin:0 0 20px;font-size:22px}.share-text{overflow-wrap:anywhere;margin:0;padding:18px;border-radius:8px;background:#f3f6fa;color:#26364b;font:15px/1.9 ui-monospace,Consolas,monospace;white-space:pre-wrap}
+    .actions{display:flex;align-items:center;gap:16px;margin-top:22px;flex-wrap:wrap}.copy{padding:11px 20px;border:1px solid #1f5fbf;border-radius:7px;background:#1f5fbf;color:#fff;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer}
+    .copy:hover{background:#184e9f}.copy:focus-visible{outline:3px solid rgba(31,95,191,.25);outline-offset:2px}.status{min-height:24px;color:#596579;font-size:14px}
+    @media(max-width:600px){main{padding:36px 18px 64px}.tool{padding:20px}.share-text{font-size:13px}}
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">求职辅助</p>
+    <h1>求职工具</h1>
+    <p class="lead">复制分享信息并打开百度网盘 APP 获取文件。</p>
+    <section class="tool" aria-labelledby="tool-title">
+      <h2 id="tool-title">百度网盘：一键网申插件等2个文件</h2>
+      <pre class="share-text" id="share-text">通过百度网盘分享的文件：一键网申插件等2个文件
+链接:https://pan.baidu.com/s/1fTSlIlI8SqwI4DWJA-foNw
+提取码:k7qa
+复制这段内容打开「百度网盘APP 即可获取」</pre>
+      <div class="actions">
+        <button class="copy" id="copy" type="button">复制分享信息</button>
+        <span class="status" id="status" role="status" aria-live="polite"></span>
+      </div>
+    </section>
+  </main>
+  <script>
+    const copyButton = document.querySelector('#copy');
+    const shareText = document.querySelector('#share-text').textContent;
+    const status = document.querySelector('#status');
+    copyButton.addEventListener('click', async () => {
+      try {
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(shareText);
+        } else {
+          const field = document.createElement('textarea');
+          field.value = shareText;
+          field.style.position = 'fixed';
+          field.style.opacity = '0';
+          document.body.append(field);
+          field.select();
+          const copied = document.execCommand('copy');
+          field.remove();
+          if (!copied) throw new Error('copy failed');
+        }
+        status.textContent = '已复制，可打开百度网盘 APP 粘贴获取。';
+      } catch {
+        status.textContent = '复制失败，请长按上方文字手动复制。';
+      }
+    });
+  </script>
+</body>
+</html>
