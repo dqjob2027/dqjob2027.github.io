@@ -6,38 +6,100 @@
   <title>求职工具｜电气学院就业日历</title>
   <style>
     :root{font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;color:#17202c;background:#f8fafc}
-    *{box-sizing:border-box}body{margin:0}main{width:min(760px,100%);margin:auto;padding:64px 24px 96px}
-    .eyebrow{margin:0 0 12px;color:#1f5fbf;font-size:14px;font-weight:700;letter-spacing:.08em}h1{margin:0;font-size:clamp(32px,5vw,48px);letter-spacing:-.035em}
-    .lead{margin:16px 0 32px;color:#596579;line-height:1.8}.tool{padding:28px;border:1px solid #dce3ec;border-radius:12px;background:#fff;box-shadow:0 8px 28px rgba(20,45,75,.06)}
-    h2{margin:0 0 20px;font-size:22px}.share-text{overflow-wrap:anywhere;margin:0;padding:18px;border-radius:8px;background:#f3f6fa;color:#26364b;font:15px/1.9 ui-monospace,Consolas,monospace;white-space:pre-wrap}
+    *{box-sizing:border-box}body{margin:0}main{width:min(900px,100%);margin:auto;padding:48px 24px 80px}
+    .eyebrow{margin:0 0 12px;color:#1f5fbf;font-size:14px;font-weight:700;letter-spacing:.08em}h1{margin:0;font-size:clamp(32px,5vw,44px);letter-spacing:-.035em}
+    .lead{margin:14px 0 28px;color:#596579;line-height:1.8}.tool{padding:28px;border:1px solid #dce3ec;border-radius:12px;background:#fff;box-shadow:0 8px 28px rgba(20,45,75,.06)}
+    .tool-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:24px;padding:6px;border:1px solid #dce3ec;border-radius:10px;background:#f3f6fa}
+    .tool-tab{min-height:46px;padding:10px 12px;border:1px solid transparent;border-radius:7px;background:transparent;color:#46566d;font-family:inherit;font-size:15px;font-weight:600;line-height:1.35;cursor:pointer}
+    .tool-tab[aria-selected="true"]{border-color:#1f5fbf;background:#1f5fbf;color:#fff;box-shadow:0 3px 9px rgba(31,95,191,.18)}
+    .tool-tab:focus-visible,.resource-link:focus-visible{outline:3px solid rgba(31,95,191,.28);outline-offset:2px}
+    [role="tabpanel"] h2{margin:0 0 18px;font-size:22px}.share-text{overflow-wrap:anywhere;margin:0;padding:18px;border-radius:8px;background:#f3f6fa;color:#26364b;font:15px/1.9 ui-monospace,Consolas,monospace;white-space:pre-wrap}
     .actions{display:flex;align-items:center;gap:16px;margin-top:22px;flex-wrap:wrap}.copy{padding:11px 20px;border:1px solid #1f5fbf;border-radius:7px;background:#1f5fbf;color:#fff;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer}
     .copy:hover{background:#184e9f}.copy:focus-visible{outline:3px solid rgba(31,95,191,.25);outline-offset:2px}.status{min-height:24px;color:#596579;font-size:14px}
-    .file-preview{margin:26px 0 0}.file-preview img{display:block;width:100%;height:auto;border:1px solid #e2e8f0;border-radius:8px}.file-preview figcaption{margin-top:8px;color:#68778b;font-size:13px}
-    @media(max-width:600px){main{padding:36px 18px 64px}.tool{padding:20px}.share-text{font-size:13px}}
+    figure{margin:24px 0 0}.file-preview img,.magic-image{display:block;width:100%;height:auto;border:1px solid #e2e8f0;border-radius:8px}.file-preview figcaption,figure figcaption{margin-top:8px;color:#68778b;font-size:13px}
+    .resource-card{padding:22px;border:1px solid #dce3ec;border-radius:9px;background:#fff}.resource-card+.resource-card{margin-top:16px}.resource-card h3{margin:0 0 8px;font-size:19px}.resource-card p{margin:8px 0;color:#596579;line-height:1.75}
+    .resource-link{display:inline-flex;align-items:center;min-height:42px;margin-top:8px;padding:9px 14px;border:1px solid #1f5fbf;border-radius:7px;color:#1f5fbf;font-weight:700;text-decoration:none}.resource-link:hover{background:#f0f6ff}
+    .magic-gallery{display:grid;grid-template-columns:1fr;gap:16px;margin-top:20px}.magic-gallery figure{margin:0}.magic-gallery .intro-image{max-height:720px;object-fit:contain;object-position:top;background:#f7f8fa}
+    @media(max-width:600px){main{padding:34px 16px 56px}.tool{padding:18px}.tool-tabs{gap:5px;padding:4px}.tool-tab{padding:9px 5px;font-size:13px}.share-text{font-size:13px}.resource-card{padding:18px}}
   </style>
 </head>
 <body>
   <main>
     <p class="eyebrow">求职辅助</p>
     <h1>求职工具</h1>
-    <p class="lead">复制分享信息并打开百度网盘 APP 获取文件。</p>
-    <section class="tool" aria-labelledby="tool-title">
-      <h2 id="tool-title">百度网盘：一键网申插件等2个文件</h2>
-      <pre class="share-text" id="share-text">通过百度网盘分享的文件：一键网申插件等2个文件
+    <p class="lead">网申、简历制作与校招信息，按需查看。</p>
+    <section class="tool" aria-label="求职工具分类">
+      <div class="tool-tabs" role="tablist" aria-label="求职工具分类">
+        <button class="tool-tab" id="tab-apply" type="button" role="tab" aria-selected="true" aria-controls="panel-apply" tabindex="0">一键网申插件</button>
+        <button class="tool-tab" id="tab-resume" type="button" role="tab" aria-selected="false" aria-controls="panel-resume" tabindex="-1">简历制作/优化</button>
+        <button class="tool-tab" id="tab-campus" type="button" role="tab" aria-selected="false" aria-controls="panel-campus" tabindex="-1">全国校招信息汇总</button>
+      </div>
+      <div id="panel-apply" role="tabpanel" aria-labelledby="tab-apply" tabindex="0">
+        <h2>百度网盘：一键网申插件等2个文件</h2>
+        <pre class="share-text" id="share-text">通过百度网盘分享的文件：一键网申插件等2个文件
 链接:https://pan.baidu.com/s/1fTSlIlI8SqwI4DWJA-foNw
 提取码:k7qa
 复制这段内容打开「百度网盘APP 即可获取」</pre>
-      <div class="actions">
-        <button class="copy" id="copy" type="button">复制分享信息</button>
-        <span class="status" id="status" role="status" aria-live="polite"></span>
+        <div class="actions">
+          <button class="copy" id="copy" type="button">复制分享信息</button>
+          <span class="status" id="status" role="status" aria-live="polite"></span>
+        </div>
+        <figure class="file-preview">
+          <img src="./images/job-tools-baidu-share.jpg" alt="百度网盘文件列表，显示一键网申插件和智能投简历插件合集">
+          <figcaption>百度网盘分享文件列表</figcaption>
+        </figure>
       </div>
-      <figure class="file-preview">
-        <img src="./images/job-tools-baidu-share.jpg" alt="百度网盘文件列表，显示一键网申插件和智能投简历插件合集">
-        <figcaption>百度网盘分享文件列表</figcaption>
-      </figure>
+      <div id="panel-resume" role="tabpanel" aria-labelledby="tab-resume" tabindex="0" hidden>
+        <h2>简历制作与优化</h2>
+        <article class="resource-card">
+          <h3>简历制作工坊（学生版）</h3>
+          <p>本地浏览器编辑简历，可预览并导出 PDF、Word。建议使用电脑端 Chrome 或 Edge；简历内容保存在当前浏览器中。</p>
+          <a class="resource-link" href="./resume-workshop/" target="_blank" rel="noopener noreferrer">打开简历制作工坊 ↗</a>
+        </article>
+        <article class="resource-card">
+          <h3>魔方简历（Magic Resume）</h3>
+          <p>AI 驱动的简历编辑与模板工具；使用前需要自行配置模型 API。</p>
+          <a class="resource-link" href="https://magicv.art/" target="_blank" rel="noopener noreferrer">访问魔方简历 ↗</a>
+          <div class="magic-gallery">
+            <figure>
+              <img class="magic-image intro-image" src="./images/magic-resume-introduction.png" alt="魔方简历项目介绍及功能说明">
+              <figcaption>项目介绍与功能</figcaption>
+            </figure>
+            <figure>
+              <img class="magic-image" src="./images/magic-resume-preview.png" alt="魔方简历编辑界面与多种简历模板效果">
+              <figcaption>简历编辑器与模板效果</figcaption>
+            </figure>
+          </div>
+        </article>
+      </div>
+      <div id="panel-campus" role="tabpanel" aria-labelledby="tab-campus" tabindex="0" hidden>
+        <h2>全国校招信息汇总</h2>
+        <p class="lead">打开校招信息汇总表：</p>
+        <a class="resource-link" href="https://wcn5yiabqbxh.feishu.cn/base/FBysbrfNWa22l7s6a2scDsfEnTf?table=tblPA2KMUBFbcATH&amp;view=vewYfpcGgF" target="_blank" rel="noopener noreferrer">查看全国校招信息 ↗</a>
+      </div>
     </section>
   </main>
   <script>
+    const tabs = [...document.querySelectorAll('[role="tab"]')];
+    function selectTab(tab, focus = false) {
+      tabs.forEach((item) => {
+        const selected = item === tab;
+        item.setAttribute('aria-selected', String(selected));
+        item.tabIndex = selected ? 0 : -1;
+        document.getElementById(item.getAttribute('aria-controls')).hidden = !selected;
+      });
+      if (focus) tab.focus();
+    }
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => selectTab(tab));
+      tab.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+          event.preventDefault();
+          const offset = event.key === 'ArrowRight' ? 1 : -1;
+          selectTab(tabs[(index + offset + tabs.length) % tabs.length], true);
+        }
+      });
+    });
     const copyButton = document.querySelector('#copy');
     const shareText = document.querySelector('#share-text').textContent;
     const status = document.querySelector('#status');
