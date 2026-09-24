@@ -11,13 +11,13 @@
     html,body{height:100%;margin:0;background:var(--bar)}
     body{display:grid;grid-template-rows:auto 1fr;overflow:hidden}
     .site-nav{position:relative;z-index:2;padding:10px 18px;border-bottom:1px solid #dce2e9;background:rgba(245,247,250,.96);box-shadow:0 4px 18px rgba(30,58,96,.05)}
-    .switcher{display:flex;width:min(100%,420px);margin:auto;padding:3px;border:1px solid var(--line);border-radius:8px;background:#e8eef5}
+    .switcher{display:flex;width:min(100%,680px);margin:auto;padding:3px;border:1px solid var(--line);border-radius:8px;background:#e8eef5}
     .switcher button{min-width:0;flex:1;padding:9px 14px;border:0;border-radius:5px;background:transparent;color:var(--muted);font:700 15px/1.3 inherit;cursor:pointer}
     .switcher button:hover{color:var(--blue)}
     .switcher button:focus-visible{outline:3px solid rgba(31,95,191,.25);outline-offset:2px}
     .switcher button[aria-selected="true"]{background:var(--blue);color:#fff;box-shadow:0 2px 8px rgba(31,95,191,.2)}
     iframe{width:100%;height:100%;border:0;background:#f5f7f9}
-    @media(max-width:520px){.site-nav{padding:8px 10px}.switcher button{padding-inline:8px;font-size:14px}}
+    @media(max-width:520px){.site-nav{padding:8px 10px}.switcher{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.switcher button{padding:8px 4px;font-size:14px}}
   </style>
 </head>
 <body>
@@ -26,6 +26,8 @@
       <button type="button" role="tab" aria-selected="true" data-page="./events/" data-title="招聘活动">招聘活动</button>
       <button type="button" role="tab" aria-selected="false" data-page="./jobs.html" data-title="找工作">找工作</button>
       <button type="button" role="tab" aria-selected="false" data-page="./internships.html" data-title="找实习">找实习</button>
+      <button type="button" role="tab" aria-selected="false" data-page="./public-exams.html" data-title="考公考编">考公考编</button>
+      <button type="button" role="tab" aria-selected="false" data-page="./interview.html" data-title="面试">面试</button>
     </div>
   </nav>
   <iframe id="content" src="./events/" title="招聘活动" loading="eager"></iframe>
