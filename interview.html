@@ -10,9 +10,16 @@
     header{display:flex;align-items:end;justify-content:space-between;gap:20px;width:min(1100px,100%);margin:0 auto;padding:32px 24px 24px}
     .eyebrow{margin:0 0 8px;color:#1f5fbf;font-size:14px;font-weight:700;letter-spacing:.08em}h1{margin:0;font-size:clamp(28px,4vw,40px)}
     a{color:#1f5fbf;font-weight:700;white-space:nowrap}a:focus-visible{outline:2px solid #1f5fbf;outline-offset:4px}
-    main{width:min(900px,100%);margin:0 auto;padding:0 24px 48px}figure{margin:0 0 16px;background:white;box-shadow:0 3px 18px rgba(20,45,75,.08)}
+    .toc{width:min(900px,calc(100% - 48px));margin:0 auto 24px;border:1px solid #d4dfed;border-radius:10px;background:#fff}
+    .toc summary{padding:16px 20px;color:#1f5fbf;font-weight:700;cursor:pointer}
+    .toc-groups{padding:0 20px 20px;border-top:1px solid #e6edf5}.toc h2{margin:22px 0 10px;font-size:17px}
+    .toc ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 24px;margin:0;padding-left:28px}
+    .toc li{padding-left:4px;line-height:1.5}.toc li a{color:#243449;font-weight:400;white-space:normal;text-decoration:none}
+    .toc li a:hover,.toc li a:focus-visible{color:#1f5fbf;text-decoration:underline}
+    main{width:min(900px,100%);margin:0 auto;padding:0 24px 48px}figure{position:relative;aspect-ratio:612/792;margin:0 0 16px;background:white;box-shadow:0 3px 18px rgba(20,45,75,.08)}
     figure img{display:block;width:100%;height:auto}
-    @media(max-width:600px){header{display:block;padding:24px 18px 18px}header a{display:inline-block;margin-top:12px}main{padding:0 8px 28px}figure{margin-bottom:8px}}
+    .question-anchor{position:absolute;left:0;width:1px;height:1px;scroll-margin-top:12px}
+    @media(max-width:600px){header{display:block;padding:24px 18px 18px}header a{display:inline-block;margin-top:12px}.toc{width:calc(100% - 16px);margin-bottom:16px}.toc ol{grid-template-columns:1fr}main{padding:0 8px 28px}figure{margin-bottom:8px}}
   </style>
 </head>
 <body>
@@ -20,9 +27,137 @@
     <div><p class="eyebrow">面试资料</p><h1>面试100问（完整版）</h1></div>
     <a href="./interview-100-questions.pdf" target="_blank" rel="noopener noreferrer">打开或下载 PDF ↗</a>
   </header>
+  <details class="toc">
+    <summary>查看100题目录 · 点击题目跳转</summary>
+    <div class="toc-groups" id="toc-groups"></div>
+  </details>
   <main id="pages" aria-label="面试100问全文"></main>
   <noscript><p>请启用 JavaScript 阅读页面，或使用上方链接打开 PDF。</p></noscript>
   <script>
+    const questions = [
+      [2, 19.03, "请做个自我介绍"],
+      [2, 44.64, "为什么想来我们公司，为什么投递这个岗位工作？"],
+      [2, 65.08, "你最大的优点是什么？"],
+      [2, 85.52, "你最大的缺点是什么？"],
+      [3, 23.9, "你的职业规划是什么？"],
+      [3, 46.93, "用三个词描述你的优缺点"],
+      [3, 64.79, "你从上一家离职的原因是什么？"],
+      [3, 80.08, "为什么要转行呢？"],
+      [4, 20.94, "老家是 X市，为什么考虑来我们XX市来工作？"],
+      [4, 33.65, "你怎么看待加班呢？"],
+      [5, 24.96, "请描述一下你过往工作中遇到的最大挑战以及你是如何解决的？"],
+      [5, 58.67, "请举例说明你如何与团队成员合作完成一个项目/任务？"],
+      [6, 9.37, "你如何处理工作中的压力或挫折？"],
+      [6, 37.93, "你如何应对与同事或上级的意见分歧？"],
+      [6, 66.49, "讲一个你主动学习新技能来解决业务问题的经历。"],
+      [7, 15.79, "讲一个你主动推动项目落地的案例。"],
+      [7, 49.5, "有没有遇到过团队成员不配合工作，你怎么处理？"],
+      [7, 80.64, "项目进度严重滞后，你会怎么做？"],
+      [8, 36.8, "你的工作被领导否定批评，你会怎么办？"],
+      [8, 70.52, "举例说明你做过最有成就感的一件事。"],
+      [9, 23.52, "讲一个你工作中犯错的经历，你怎么补救，学到什么？"],
+      [9, 57.24, "你更喜欢独立工作还是团队协作？"],
+      [9, 88.38, "当多项任务同时压过来，你如何做时间管理？"],
+      [10, 39.76, "你如何向上汇报工作？举个例子。"],
+      [10, 73.47, "有没有跨部门协作的经历，遇到过什么困难？"],
+      [12, 19.03, "你为什么选择我们公司？"],
+      [12, 42.06, "你对我们应聘的这个职位是怎么理解的？"],
+      [12, 65.08, "你的期望薪资是多少？"],
+      [12, 88.49, "你对出差有什么看法呢？"],
+      [13, 21.32, "最快什么时候入职？"],
+      [13, 34.03, "如果落选，你会怎么做？"],
+      [13, 57.06, "有收到其他offer吗？"],
+      [13, 77.5, "你还有什么问题想问我们吗？"],
+      [15, 26.58, "你找工作最看重什么？"],
+      [15, 55.14, "你求职时，怎么平衡薪资、平台、工作内容三者？"],
+      [15, 83.7, "如果offer薪资达不到你的预期，你会怎么选择？"],
+      [16, 34.21, "你怎么看待频繁跳槽？"],
+      [16, 62.77, "你能接受岗位和你想象有差距吗？"],
+      [17, 9.37, "你为什么选择我们这个行业？"],
+      [17, 45.47, "说说你理解这个行业现在面临的机遇与挑战？"],
+      [17, 74.03, "你觉得做好这份工作，最难的地方是什么？"],
+      [18, 23.52, "如果交给你一项你完全没有接触过的任务，你会怎么做？"],
+      [18, 57.24, "你认为什么样才算这份工作做得好？"],
+      [18, 88.38, "你平时通过哪些渠道学习行业知识？"],
+      [19, 37.18, "和别的候选人相比，你的核心竞争力是什么？"],
+      [19, 68.32, "你认为你做这个岗位，最大短板是什么？"],
+      [20, 23.32, "领导给你一个明显不合理的任务，你怎么办？"],
+      [20, 62.2, "项目上线出重大问题，所有人都在找原因，你会怎么做？"],
+      [21, 18.37, "你的想法和公司战略不一致，你会怎么做？"],
+      [21, 54.67, "明明不是你的错，但锅甩到你身上，你如何处理？"],
+      [22, 15.79, "客户/合作方非常难沟通，你如何推进工作？"],
+      [22, 59.82, "团队内部出现矛盾，你作为普通成员如何处理？"],
+      [23, 18.37, "短时间同时压过来多个紧急任务，优先级怎么排？"],
+      [23, 57.24, "你努力做的方案，被领导全盘否定，你怎么处理？"],
+      [24, 25.9, "你理想中的领导是什么样？"],
+      [24, 57.05, "你理想的团队氛围是什么样子？"],
+      [25, 9.37, "如果你的领导能力一般，你怎么开展工作？"],
+      [25, 48.24, "你如何看待内卷？"],
+      [25, 81.96, "工作和生活冲突，你如何平衡？"],
+      [26, 44.53, "你如何看待职场PUA？"],
+      [27, 9.37, "为什么不考研/不考公？"],
+      [27, 43.09, "你的毕业设计/论文讲一下。"],
+      [27, 74.23, "在校期间最大的收获是什么？"],
+      [28, 26.11, "实习中遇到最大困难是什么？"],
+      [28, 59.82, "你觉得应届生做这份工作最大难点在哪里？"],
+      [29, 15.79, "没有相关经验，你凭什么胜任这个岗位？"],
+      [29, 57.24, "在校什么经历对你求职帮助最大？"],
+      [30, 15.79, "你怎么看待第一份工作？"],
+      [30, 59.62, "回顾过往经历，你最大收获是什么？"],
+      [31, 15.79, "过往工作里，有哪些遗憾？"],
+      [31, 49.5, "什么样的情况会让你选择一份工作？什么情况会让你考虑离职？"],
+      [32, 9.37, "你认为成功的职场人需要具备哪些特质？"],
+      [32, 48.24, "你怎么看待努力和回报不对等？"],
+      [33, 26.91, "团队目前的人员构成是怎样？"],
+      [33, 39.62, "这个岗位为什么会空缺，是新增岗位还是人员流动？"],
+      [33, 54.91, "这个岗位的绩效考核标准是什么？"],
+      [33, 67.62, "部门接下来半年重点业务方向是什么？"],
+      [33, 82.91, "新人入职会有培训或者导师带教吗？"],
+      [34, 13.21, "团队目前面临最大业务难点是什么？"],
+      [34, 28.5, "您在这个公司工作，最喜欢的一点是什么？"],
+      [34, 48.74, "你有什么爱好？"],
+      [34, 77.3, "你的缺点给你的工作带来过哪些实际影响？"],
+      [35, 33.84, "你怎么看待竞争？"],
+      [35, 70.14, "如果入职之后发现工作内容和JD差别很大，你怎么办？"],
+      [36, 31.26, "你如何看待稳定性，你打算在公司待多久？"],
+      [36, 67.56, "你怎么看待35岁职场危机？"],
+      [37, 31.26, "你会因为什么原因离职？"],
+      [37, 67.56, "如果让你重新选择，你还会选择之前的专业/行业吗？"],
+      [38, 23.52, "你如何定义一份好工作？"],
+      [38, 62.4, "你有没有崇拜的人？为什么？"],
+      [39, 20.94, "说说你的性格。"],
+      [39, 57.24, "你更看重过程，还是结果？"],
+      [40, 15.79, "当你的努力没有被看见，你会怎么做？"],
+      [40, 62.4, "如何平衡理想和现实？"],
+      [41, 31.26, "你遇到过最难沟通的人，你怎么处理？"],
+      [41, 77.87, "你怎么看待跨部门甩锅？"],
+      [42, 44.15, "如果入职之后发现自己不喜欢这份工作，你会怎么做？"],
+      [43, 15.79, "你对我们公司还有哪些疑问？"],
+      [43, 42.15, "你如何看待试用期？"],
+      [43, 83.61, "如果入职后发现团队氛围和你预期不符，你会怎么做？"],
+    ];
+    const sections = [
+      [1, 10, '第一部分：关于“你”的问题'],
+      [11, 25, '第二部分：关于“能力”的问题'],
+      [26, 33, '第三部分：关于“公司/职位”的问题'],
+      [34, 100, '第四部分：补充拓展面试高频问题'],
+    ];
+    const groups = document.querySelector('#toc-groups');
+    for (const [start, end, title] of sections) {
+      const heading = document.createElement('h2');
+      heading.textContent = title;
+      const list = document.createElement('ol');
+      list.start = start;
+      for (let number = start; number <= end; number++) {
+        const item = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = `#q-${number}`;
+        link.textContent = questions[number - 1][2];
+        item.append(link);
+        list.append(item);
+      }
+      groups.append(heading, list);
+    }
     const pages = document.querySelector('#pages');
     for (let number = 1; number <= 45; number++) {
       const figure = document.createElement('figure');
@@ -32,6 +167,14 @@
       image.loading = number <= 2 ? 'eager' : 'lazy';
       image.decoding = 'async';
       figure.append(image);
+      questions.forEach(([page, position], index) => {
+        if (page !== number) return;
+        const anchor = document.createElement('span');
+        anchor.id = `q-${index + 1}`;
+        anchor.className = 'question-anchor';
+        anchor.style.top = `${position}%`;
+        figure.append(anchor);
+      });
       pages.append(figure);
     }
   </script>
