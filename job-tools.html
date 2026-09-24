@@ -12,6 +12,7 @@
     h2{margin:0 0 20px;font-size:22px}.share-text{overflow-wrap:anywhere;margin:0;padding:18px;border-radius:8px;background:#f3f6fa;color:#26364b;font:15px/1.9 ui-monospace,Consolas,monospace;white-space:pre-wrap}
     .actions{display:flex;align-items:center;gap:16px;margin-top:22px;flex-wrap:wrap}.copy{padding:11px 20px;border:1px solid #1f5fbf;border-radius:7px;background:#1f5fbf;color:#fff;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer}
     .copy:hover{background:#184e9f}.copy:focus-visible{outline:3px solid rgba(31,95,191,.25);outline-offset:2px}.status{min-height:24px;color:#596579;font-size:14px}
+    .file-preview{margin:26px 0 0}.file-preview img{display:block;width:100%;height:auto;border:1px solid #e2e8f0;border-radius:8px}.file-preview figcaption{margin-top:8px;color:#68778b;font-size:13px}
     @media(max-width:600px){main{padding:36px 18px 64px}.tool{padding:20px}.share-text{font-size:13px}}
   </style>
 </head>
@@ -30,6 +31,10 @@
         <button class="copy" id="copy" type="button">复制分享信息</button>
         <span class="status" id="status" role="status" aria-live="polite"></span>
       </div>
+      <figure class="file-preview">
+        <img src="./images/job-tools-baidu-share.jpg" alt="百度网盘文件列表，显示一键网申插件和智能投简历插件合集">
+        <figcaption>百度网盘分享文件列表</figcaption>
+      </figure>
     </section>
   </main>
   <script>
