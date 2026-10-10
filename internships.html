@@ -635,6 +635,7 @@
     .field {
       display: grid;
       gap: 4px;
+      overflow-wrap: anywhere;
     }
 
     .field strong {
@@ -850,7 +851,7 @@
           <div class="title-row">
             <h1>2027届实习机会</h1>
             <div class="update-tools">
-              <span class="update-date">更新日期：2026年10月8日</span>
+              <span class="update-date">更新日期：2026年10月10日</span>
               <button class="log-button" type="button" data-log-open aria-haspopup="dialog">更新日志</button>
             </div>
           </div>
@@ -998,7 +999,7 @@
 
     <footer>
       <div class="wrap footer-content">
-        <span>信息来源包括企业官网、校招官网、学校就业网，以及 BOSS直聘、前程无忧51JOB、智联招聘、猎聘、实习僧等平台公开页面。页面为年级就业信息整理用途，最近检索日期为 2026-10-08。</span>
+        <span>信息来源包括企业官网、校招官网、学校就业网，以及 BOSS直聘、前程无忧51JOB、智联招聘、猎聘、实习僧等平台公开页面。页面为年级就业信息整理用途，最近检索日期为 2026-10-10。</span>
         <span class="visit-counter" aria-live="polite">访问次数：<strong class="visit-count-value" id="visitCount">统计中</strong> 次</span>
       </div>
     </footer>
@@ -1076,6 +1077,91 @@
     const directions = ["嵌入式", "C/C++", "电路设计", "PCB设计", "硬件测试", "软件测试", "无线通信", "通信网络", "数据处理", "IC设计", "芯片验证", "版图", "EDA", "半导体工艺", "电气控制", "PLC/自动化", "电力电子", "供配电", "建筑智能化", "楼宇自控", "弱电系统", "电气调试", "量子技术", "交通规划", "智能交通", "轨道交通"];
 
     const jobs = [
+      {
+        company: "寒序科技",
+        title: "数字芯片设计 / 验证实习生",
+        city: "北京", district: "海淀区东升大厦，线下实习", cityRank: 5,
+        status: "正在投递", statusClass: "open",
+        majors: ["电子信息工程", "通信工程", "微电子科学与工程", "新一代电子信息技术（含量子技术等）"],
+        directions: ["IC设计", "芯片验证", "EDA"],
+        intro: "清华校友创办的AI芯片企业，本岗位参与数字芯片模块研发。",
+        requirements: "电子、微电子、集成电路等相关专业本科及以上在读；掌握数字电路及Verilog/SystemVerilog，有课程设计、FPGA或RTL项目。Linux、Python/Tcl及UVM经验加分。",
+        content: "RTL设计或验证、仿真、FPGA验证及问题定位，整理技术文档，可选择设计或验证方向。",
+        duration: "平台列3个月；每周线下不少于3天，长期实习优先。投递截止2026年12月31日。",
+        benefits: "薪资面议、导师指导；优秀者有长期实习/转正及学术推荐信机会。",
+        note: "通信及新一代电子信息技术按电子/IC研究方向匹配，需确认资格。简历注明可实习时长和每周天数；公告中的全职五险一金等未作为实习福利列入。",
+        reason: "为本科微电子与电子信息研究生补充数字IC设计验证实习。",
+        source: "实习僧企业职位2026-10-02刷新；核对日期2026-10-10",
+        url: "https://www.shixiseng.com/intern/inn_lafy99x3hcpn?pcm=pc_SearchList"
+      },
+      {
+        company: "智能船舶研究院（平台显示名称）",
+        title: "电气设计工程师实习生（电气硕士）",
+        city: "杭州", district: "拱墅区浙江二轻大厦A座", cityRank: 5,
+        status: "正在投递", statusClass: "open",
+        majors: ["电气工程"],
+        directions: ["电气控制", "电路设计", "数据处理"],
+        intro: "本岗位围绕智能船舶动力电力系统及智能控制产品开展仿真研发支持。",
+        requirements: "正文要求电气工程专业硕士研究生；掌握电力系统仿真、控制或健康管理，熟悉MATLAB、C++、Python及原理图/PCB、单片机调试。",
+        content: "智能船舶动力电力系统运行性能仿真分析，为电力系统及智能化控制产品研发提供支持。",
+        duration: "6个月，每周5天；6个月以上优先。投递截止2026年11月30日。",
+        benefits: "150-200元/天，餐补、一对一导师、转正机会。",
+        note: "列表虽显示学历不限，但正文要求硕士，本卡按正文执行。企业完整名称、实习协议及具体工作安排请与招聘方确认。",
+        reason: "补充电气研究生的船舶电力系统仿真实习。",
+        source: "实习僧企业职位2026-10-08刷新；核对日期2026-10-10",
+        url: "https://www.shixiseng.com/intern/inn_dugj6f9usvtg?pcm=pc_SearchList"
+      },
+      {
+        company: "探微智造（杭州）科技发展有限公司",
+        title: "工程实习生（电子 / 测试 / 数据分析相关）",
+        city: "杭州", district: "萧山区宁围街道旅学路177号江南电子谷", cityRank: 5,
+        status: "正在投递", statusClass: "open",
+        majors: ["电子信息工程", "通信工程", "新一代电子信息技术（含量子技术等）"],
+        directions: ["电路设计", "硬件测试", "数据处理", "C/C++"],
+        intro: "西安电子科技大学杭州研究院团队孵化的精密增材制造企业，研发曲面制造工艺与装备。",
+        requirements: "统招大三/大四本科或硕士在读，电子信息、通信等相关专业；掌握AD、AutoCAD、Python/C++等至少一种工具，具备装配测试能力。",
+        content: "装备电路布线、传感器接线及板卡测试，运动平台标定、样机测试、数据采集分析与整机联调。",
+        duration: "6个月，每周5天；投递截止2026年10月30日。",
+        benefits: "月度实习津贴及阶段项目奖金，金额面议；实习证明、优秀者转正，符合条件可申请地方补贴。",
+        note: "页面列周末双休、不加班、不打卡，实际安排需确认。园区有食堂和公寓不等于免费食宿；电子信息研究生按电子信息方向匹配。",
+        reason: "补充电子、通信学生的硬件联调与工程测试实习。",
+        source: "实习僧企业职位2026-10-07刷新；核对日期2026-10-10",
+        url: "https://www.shixiseng.com/intern/inn_ne1udluun9ob?pcm=pc_SearchList"
+      },
+      {
+        company: "中科芯知（平台显示名称）",
+        title: "AI硬件开发实习生（硕士）",
+        city: "北京", district: "海淀区中关村具身智能创新产业园", cityRank: 5,
+        status: "正在投递", statusClass: "open",
+        majors: ["新一代电子信息技术（含量子技术等）"],
+        directions: ["嵌入式", "PCB设计", "电路设计", "硬件测试", "数据处理"],
+        intro: "本岗位参与桌面AI硬件终端开发，涉及传感器、电源、蓝牙及数据采集。",
+        requirements: "平台学历为硕士，电子/通信相关方向优先；具备PCB设计、焊接、固件烧录及调试能力，熟悉ESP32、STM32等平台。不是本科岗位。",
+        content: "硬件方案、样品制作和功能验证，配合视频及毫米波数据采集传输，参与器件选型和硬件Demo展示。",
+        duration: "3个月，每周5天；投递截止2026年11月8日。",
+        benefits: "200元/天。",
+        note: "新一代电子信息技术按电子/通信相关研究方向匹配，需确认资格；公司完整名称与实习协议主体须向HR核实。",
+        reason: "为电子信息研究生补充AI终端与嵌入式硬件实习。",
+        source: "实习僧企业职位2026-10-08刷新；核对日期2026-10-10",
+        url: "https://www.shixiseng.com/intern/inn_lr0kkam8hqci?pcm=pc_SearchList"
+      },
+      {
+        company: "交通运输部规划研究院基础所",
+        title: "交通行业AI / 数据研究实习生（转载线索）",
+        city: "北京", district: "朝阳区曙光西里甲6号楼2号院", cityRank: 5,
+        status: "投递时请确认招聘时效性", statusClass: "verify",
+        majors: ["交通运输工程", "新一代电子信息技术（含量子技术等）"],
+        directions: ["智能交通", "数据处理"],
+        intro: "交通运输部直属规划研究机构，转载岗位涉及交通行业AI与高质量数据集研究。",
+        requirements: "转载正文要求硕士及以上，1-2人；研究、文稿起草与沟通能力较强，数据集训练、智能体开发或相关研究经验优先。未列具体专业，按研究方向匹配。",
+        content: "交通行业AI与数据集研究、数据资料整理、文稿/PPT及招投标材料编写和会议筹办。",
+        duration: "至少3个月，通常3-6个月；每周至少3天线下到岗，其他时间可线上支撑。",
+        benefits: "转载正文列劳务费、出差补助、工作餐；金额及具体条件须实际沟通。",
+        note: "仅为得早平台10月8日转载线索，未向HR核实；不采用页面摘要与正文不一致的每日工时及截止日期。先邮件确认岗位真实性、专业资格和是否仍在招。邮件及附件名：学校-专业-姓名。来源：https://www.deizao.cn/index/index/shixixq/jobid/272337",
+        reason: "为交通与电子信息研究生提供交通数据/AI研究方向的待确认线索。",
+        source: "得早学就创2026-10-08转载正文；核对日期2026-10-10，非原始官方公告",
+        url: "mailto:sunshuo@tpri.org.cn", actionLabel: "邮件咨询与投递", displayUrl: "sunshuo@tpri.org.cn", copyValue: "sunshuo@tpri.org.cn", copyLabel: "复制联系邮箱"
+      },
       {
         company: "灵动星核",
         title: "嵌入式实习生（机械臂 / 灵巧手）",
@@ -2582,6 +2668,14 @@
       }
     ];
     const updateLogs = [
+      {
+        date: "2026年10月10日",
+        items: [
+          { kind: "就业", title: "长工微、中建电子、国网数科（含远光软件）、华能滇东、中交一公局、电科芯片", detail: "按此顺序新增6张全国就业卡片，区分本科及以上与硕博岗位，补充芯片研发、建筑智能化、电气、通信及交通方向。" },
+          { kind: "实习", title: "寒序科技、智能船舶研究院、探微智造、中科芯知、交通运输部规划研究院基础所", detail: "按此顺序新增5张实习卡片，补充期限、待遇、每周出勤及学历要求。交通研究实习为转载线索，未向HR确认，按需确认时效处理。" },
+          { kind: "维护", title: "原有155张卡片入口与截止状态", detail: "逐一检查HTTP入口及智联/实习僧明确下线提示，未发现请求失败；邮箱电话仅验证格式。中电福富第一批10月8日截止，调整为已截止仅参考。保留状态优先级，同状态按最新批次及新增顺序展示。" }
+        ]
+      },
       {
         date: "2026年10月8日",
         items: [
