@@ -1000,7 +1000,7 @@
     <footer>
       <div class="wrap footer-content">
         <span>信息来源包括企业官网、校招官网、学校就业网，以及 BOSS直聘、前程无忧51JOB、智联招聘、猎聘、实习僧等平台公开页面。页面为年级就业信息整理用途，最近检索日期为 2026-10-10。</span>
-        <span class="visit-counter" aria-live="polite">访问次数：<strong class="visit-count-value" id="visitCount">统计中</strong> 次</span>
+        <span class="visit-counter" aria-live="polite">访问次数：<strong class="visit-count-value" id="visitCount">统计中</strong></span>
       </div>
     </footer>
   </div>
@@ -3207,24 +3207,33 @@
       const endpoint = "https://ubiquitous-platypus-3013b2.netlify.app/.netlify/functions/visit-count";
 
       for (const method of ["POST", "GET"]) {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 8000);
         try {
           const response = await fetch(endpoint, {
             method,
             headers: { "accept": "application/json" },
-            cache: "no-store"
+            cache: "no-store",
+            signal: controller.signal
           });
 
           if (!response.ok) continue;
 
           const data = await response.json();
-          const count = Number(data.count);
-          if (!Number.isFinite(count)) continue;
+          const count = data.count;
+          if (!Number.isSafeInteger(count) || count < 0) continue;
 
-          localStorage.setItem("internshipVisitCount", String(count));
-          visitCount.textContent = new Intl.NumberFormat("zh-CN").format(count);
+          visitCount.textContent = `${new Intl.NumberFormat("zh-CN").format(count)} 次`;
+          try {
+            localStorage.setItem("internshipVisitCount", String(count));
+          } catch (error) {
+            // A live count remains valid when browser storage is unavailable.
+          }
           return;
         } catch (error) {
           // GET below provides a read-only fallback when incrementing fails.
+        } finally {
+          clearTimeout(timeout);
         }
       }
 
@@ -3235,9 +3244,9 @@
         lastCount = 0;
       }
 
-      visitCount.textContent = Number.isFinite(lastCount) && lastCount > 0
-        ? new Intl.NumberFormat("zh-CN").format(lastCount)
-        : "统计服务维护中";
+      visitCount.textContent = Number.isSafeInteger(lastCount) && lastCount > 0
+        ? `${new Intl.NumberFormat("zh-CN").format(lastCount)} 次（上次统计）`
+        : "暂无法获取";
     }
 
     function render() {
