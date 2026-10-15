@@ -8679,7 +8679,11 @@
     }
     function renderUpdateLogs() {
       if (!updateLogList) return;
-      updateLogList.innerHTML = updateLogs.map(entry => `
+      const hiddenKinds = new Set(["检索", "核查", "维护", "状态", "链接"]);
+      const visibleLogs = updateLogs.map(entry => ({
+        ...entry, items: entry.items.filter(item => !hiddenKinds.has(item.kind))
+      })).filter(entry => entry.items.length);
+      updateLogList.innerHTML = visibleLogs.map(entry => `
         <article class="log-entry">
           <p class="log-date">${entry.date}</p>
           <ul class="log-items">
