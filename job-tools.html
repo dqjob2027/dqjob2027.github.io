@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>求职工具｜电气学院就业日历</title>
+  <link rel="stylesheet" href="./visit-counter.css">
+  <script defer src="./visit-counter.js"></script>
   <style>
     :root{font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;color:#17202c;background:#f8fafc}
     *{box-sizing:border-box}body{margin:0}main{width:min(900px,100%);margin:auto;padding:48px 24px 80px}
@@ -80,6 +82,7 @@
       </div>
     </section>
   </main>
+  <footer class="site-visit-footer"><span class="visit-counter" aria-live="polite">访问次数：<strong class="visit-count-value" id="visitCount">统计中</strong></span></footer>
   <script>
     const tabs = [...document.querySelectorAll('[role="tab"]')];
     function selectTab(tab, focus = false) {

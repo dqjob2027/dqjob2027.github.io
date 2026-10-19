@@ -1,0 +1,31 @@
+.site-visit-footer {
+  box-sizing: border-box;
+  width: min(1160px, calc(100% - 36px));
+  margin: 24px auto 0;
+  padding: 20px 0 28px;
+  border-top: 1px solid #d4dfed;
+  text-align: center;
+  font: 14px/1.6 "Noto Sans SC", "Microsoft YaHei", sans-serif;
+}
+.site-visit-footer .visit-counter {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: 100%;
+  min-height: 38px;
+  padding: 7px 10px;
+  border: 1px solid #d4dfed;
+  border-radius: 999px;
+  background: #fff;
+  color: #344054;
+}
+.site-visit-footer .visit-count-value {
+  min-width: 4ch;
+  color: #182230;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
