@@ -23,6 +23,7 @@
     .resource-card{padding:22px;border:1px solid #dce3ec;border-radius:9px;background:#fff}.resource-card+.resource-card{margin-top:16px}.resource-card h3{margin:0 0 8px;font-size:19px}.resource-card p{margin:8px 0;color:#596579;line-height:1.75}
     .resource-link{display:inline-flex;align-items:center;min-height:42px;margin-top:8px;padding:9px 14px;border:1px solid #1f5fbf;border-radius:7px;color:#1f5fbf;font-weight:700;text-decoration:none}.resource-link:hover{background:#f0f6ff}
     .magic-gallery{display:grid;grid-template-columns:1fr;gap:16px;margin-top:20px}.magic-gallery figure{margin:0}.magic-gallery .intro-image{max-height:720px;object-fit:contain;object-position:top;background:#f7f8fa}
+    .boss-helper{margin-bottom:28px}.boss-helper h2{line-height:1.5}.tool-features,.usage-steps{padding-left:24px;color:#46566d;line-height:1.85}.tool-features li+li{margin-top:6px}.usage-guide{margin-top:22px;border:1px solid #dce3ec;border-radius:8px;overflow:hidden}.usage-guide summary{padding:15px 16px;background:#f3f6fa;color:#1f5fbf;font-weight:700;cursor:pointer;line-height:1.6}.usage-guide summary:focus-visible{outline:3px solid rgba(31,95,191,.28);outline-offset:-3px}.usage-content{padding:4px 18px 18px;overflow-wrap:anywhere}.usage-steps li{padding-left:3px}.usage-steps li+li{margin-top:18px}.usage-steps strong{display:block;color:#17202c}.usage-note{margin:18px 0;padding:14px 16px;border-left:3px solid #b86b16;border-radius:4px;background:#fff7e8;color:#654417;line-height:1.8}.usage-note p{color:inherit}.boss-helper .actions{gap:10px;margin-top:14px}.boss-helper .resource-link{margin-top:0}.boss-helper h3{margin-top:22px}.boss-helper .source-note{margin-top:20px;font-size:13px}.usage-content a{color:#1f5fbf}.usage-content code{overflow-wrap:anywhere}
     @media(max-width:600px){main{padding:34px 16px 56px}.tool{padding:18px}.tool-tabs{gap:8px;padding:4px}.tool-tab{padding:9px 5px;font-size:13px}.share-text{font-size:13px}.resource-card{padding:18px}}
   </style>
 </head>
@@ -38,13 +39,57 @@
         <button class="tool-tab" id="tab-campus" type="button" role="tab" aria-selected="false" aria-controls="panel-campus" tabindex="-1">全国校招信息汇总</button>
       </div>
       <div id="panel-apply" role="tabpanel" aria-labelledby="tab-apply" tabindex="0">
+        <article class="resource-card boss-helper" id="boss-helper" aria-labelledby="boss-helper-title">
+          <h2 id="boss-helper-title">小臣版 AI-Boss 海投助手</h2>
+          <p>面向 BOSS 直聘网页版的求职辅助脚本，可批量发起沟通、筛选岗位，并通过 AI 解析简历、生成招呼语和回复 HR。</p>
+          <p><strong>使用准备：</strong>电脑端 Chrome 或 Edge、本人 BOSS 直聘账号、油猴或脚本猫；使用 AI 功能还需自行配置模型 API，费用以所选服务商为准。</p>
+          <ul class="tool-features">
+            <li>按职位关键词、城市等条件批量沟通，支持多城市轮询。</li>
+            <li>筛选 HR 活跃状态、排除猎头，并记录已联系岗位以减少重复操作。</li>
+            <li>上传 PDF、Word、TXT 简历，生成自我介绍；可按需设置自动聊天、附件或图片简历发送。</li>
+          </ul>
+          <div class="actions">
+            <a class="resource-link" href="https://github.com/DYxiaochen/AI-BossJob" target="_blank" rel="noopener noreferrer">项目说明与下载 ↗</a>
+            <a class="resource-link" href="https://github.com/DYxiaochen/AI-BossJob/blob/main/Boss_helper.js" target="_blank" rel="noopener noreferrer">打开脚本代码 ↗</a>
+          </div>
+          <aside class="usage-note" aria-label="使用前提醒">
+            <strong>使用前请先修改 AI 角色：</strong>当前 GitHub 版默认提示词包含编造经历、证书等要求。请用下方真实信息提示词替换并保存，再使用 AI。首次使用建议保持自动聊天、自动发送简历关闭，先检查招呼语和实际联系对象。
+          </aside>
+          <details class="usage-guide" id="boss-usage">
+            <summary>查看安装与使用步骤（首次使用请展开）</summary>
+            <div class="usage-content">
+              <ol class="usage-steps">
+                <li><strong>安装脚本管理器</strong>用电脑浏览器打开 <a href="https://www.tampermonkey.net/" target="_blank" rel="noopener noreferrer">Tampermonkey（油猴）官网</a>或 <a href="https://scriptcat.org/zh-CN/" target="_blank" rel="noopener noreferrer">ScriptCat（脚本猫）官网</a>，通过对应浏览器扩展商店安装其中一个。</li>
+                <li><strong>添加海投助手脚本</strong>点击上方“打开脚本代码”，在 GitHub 文件页点击 Raw（原始文件）查看完整代码并复制。打开油猴或脚本猫的管理面板，选择“添加新脚本”，删除编辑器自带模板，粘贴完整代码，按 Ctrl+S 保存，并确认脚本已启用。</li>
+                <li><strong>确认脚本可以运行</strong>允许脚本管理器访问 BOSS 直聘网站；如油猴提示未获执行权限，按其提示开启“允许用户脚本”或开发者模式，具体可查看<a href="https://www.tampermonkey.net/faq.php?q=Q209" target="_blank" rel="noopener noreferrer">官方权限说明</a>。随后刷新 BOSS 页面。</li>
+                <li><strong>登录 BOSS 直聘并打开职位列表</strong>用本人账号进入 <a href="https://www.zhipin.com/web/geek/jobs" target="_blank" rel="noopener noreferrer">BOSS 直聘职位列表</a>，完成登录和正常搜索，确认右侧出现助手面板。按项目说明，在 BOSS 设置中开启打招呼功能。</li>
+                <li><strong>配置 AI，并替换默认角色</strong>在助手中点击“AI配置”，选择自己使用的模型服务商，填写 API Key、API URL 和模型名称。在“AI角色设定（系统提示词）”中粘贴下方真实信息提示词，保存后重新打开检查，再测试连接。API Key 只填写在自己的助手配置里，不要发给他人或粘贴到聊天消息中。</li>
+                <li><strong>上传简历并核对内容</strong>进入“插件设置”，上传 PDF、Word 或 TXT 简历（文件小于 10MB）。先检查提取后的文字，再点击“AI分析简历”；若扫描版 PDF 无法识别，改为粘贴可编辑的简历文字。逐条核对生成的招呼语，删除不符合本人情况的描述。</li>
+                <li><strong>填写筛选条件，小范围试用</strong>例如“职位名包含”填“嵌入式,电子工程师”，“工作地包含”填“福州,厦门”，多个词用逗号分隔；按需设置 HR 活跃状态和猎头过滤。先人工确认岗位专业、学历、应届身份等要求，点击“启动海投”，检查最初几次沟通是否符合预期；需要暂停时点击“停止海投”。</li>
+                <li><strong>按需使用自动聊天和简历发送</strong>批量沟通与智能聊天是不同模式。确认简历、AI角色和回复结果可靠后，再决定是否在聊天页使用“开始智能聊天”或开启自动发送简历。这些功能会实际联系 HR、发送消息或简历，请持续留意沟通内容，并亲自确认薪资、到岗时间等重要事项。</li>
+              </ol>
+              <h3>可复制的真实信息提示词</h3>
+              <pre class="share-text" id="boss-ai-prompt">你是求职沟通助手。只能根据我提供的真实简历和已确认信息回答。不得编造或夸大专业、学历、成绩、实习、项目、证书、技能和工作经验；简历中没有的信息请明确说明“需要本人确认”。不得替我承诺薪资、到岗时间、出差安排或接受录用。回复应简洁、礼貌；遇到重要条件、个人敏感信息或不确定事项，提示由本人继续沟通。</pre>
+              <div class="actions">
+                <button class="copy" type="button" data-copy-target="boss-ai-prompt" data-copy-status="boss-copy-status" data-copy-success="已复制，请粘贴到助手的 AI角色设定中并保存。">复制真实信息提示词</button>
+                <span class="status" id="boss-copy-status" role="status" aria-live="polite"></span>
+              </div>
+              <p>当前版本连接硅基流动时，不会将“AI角色设定”作为系统消息传入；使用该配置时建议保持自动聊天关闭。其他配置下，替换提示词也不能保证 AI 永不出错，关键沟通仍需本人核对。调用 AI 时，相关简历文本及对话可能发送到你配置的模型服务商，请先去除不必要的个人敏感信息。</p>
+              <h3>常见问题</h3>
+              <p><strong>页面没有助手面板：</strong>确认在电脑浏览器的 BOSS 职位列表页，脚本已启用且有网站访问、用户脚本执行权限，再刷新页面。</p>
+              <p><strong>AI 分析失败：</strong>检查 API Key、接口地址、模型名及服务额度，并检查简历文字是否提取完整。网页中的普通聊天账号不等同于 API Key。</p>
+              <p><strong>运行异常或出现验证：</strong>点击“停止海投”，按平台正常流程处理；投递数量和频率以当前账号及平台规则为准。</p>
+            </div>
+          </details>
+          <p class="source-note">说明依据：<a href="https://github.com/DYxiaochen/AI-BossJob/blob/main/README.md" target="_blank" rel="noopener noreferrer">项目 README</a>与 GitHub V2.0.0.0 源码，整理于2026年10月26日。第三方开源工具，功能兼容性以项目更新为准；本网站未登录求职账号验证实际投递效果。</p>
+        </article>
         <h2>百度网盘：一键网申插件等2个文件</h2>
         <pre class="share-text" id="share-text">通过百度网盘分享的文件：一键网申插件等2个文件
 链接:https://pan.baidu.com/s/1fTSlIlI8SqwI4DWJA-foNw
 提取码:k7qa
 复制这段内容打开「百度网盘APP 即可获取」</pre>
         <div class="actions">
-          <button class="copy" id="copy" type="button">复制分享信息</button>
+          <button class="copy" id="copy" type="button" data-copy-target="share-text" data-copy-status="status" data-copy-success="已复制，可打开百度网盘 APP 粘贴获取。">复制分享信息</button>
           <span class="status" id="status" role="status" aria-live="polite"></span>
         </div>
         <figure class="file-preview">
@@ -104,28 +149,29 @@
         }
       });
     });
-    const copyButton = document.querySelector('#copy');
-    const shareText = document.querySelector('#share-text').textContent;
-    const status = document.querySelector('#status');
-    copyButton.addEventListener('click', async () => {
-      try {
-        if (navigator.clipboard?.writeText) {
-          await navigator.clipboard.writeText(shareText);
-        } else {
-          const field = document.createElement('textarea');
-          field.value = shareText;
-          field.style.position = 'fixed';
-          field.style.opacity = '0';
-          document.body.append(field);
-          field.select();
-          const copied = document.execCommand('copy');
-          field.remove();
-          if (!copied) throw new Error('copy failed');
+    document.querySelectorAll('[data-copy-target]').forEach((copyButton) => {
+      copyButton.addEventListener('click', async () => {
+        const shareText = document.getElementById(copyButton.dataset.copyTarget).textContent;
+        const status = document.getElementById(copyButton.dataset.copyStatus);
+        try {
+          if (navigator.clipboard?.writeText) {
+            await navigator.clipboard.writeText(shareText);
+          } else {
+            const field = document.createElement('textarea');
+            field.value = shareText;
+            field.style.position = 'fixed';
+            field.style.opacity = '0';
+            document.body.append(field);
+            field.select();
+            const copied = document.execCommand('copy');
+            field.remove();
+            if (!copied) throw new Error('copy failed');
+          }
+          status.textContent = copyButton.dataset.copySuccess;
+        } catch {
+          status.textContent = '复制失败，请长按上方文字手动复制。';
         }
-        status.textContent = '已复制，可打开百度网盘 APP 粘贴获取。';
-      } catch {
-        status.textContent = '复制失败，请长按上方文字手动复制。';
-      }
+      });
     });
   </script>
 </body>
