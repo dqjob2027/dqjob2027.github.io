@@ -8,37 +8,57 @@
   <script defer src="./visit-counter.js"></script>
   <style>
     :root{font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;color:#17202c;background:#f8fafc}
-    *{box-sizing:border-box}body{margin:0}main{width:min(900px,100%);margin:auto;padding:48px 24px 80px}
-    .eyebrow{margin:0 0 12px;color:#1f5fbf;font-size:14px;font-weight:700;letter-spacing:.08em}h1{margin:0;font-size:clamp(32px,5vw,44px);letter-spacing:-.035em}
-    .lead{margin:14px 0 28px;color:#596579;line-height:1.8}.tool{padding:28px;border:1px solid #dce3ec;border-radius:12px;background:#fff;box-shadow:0 8px 28px rgba(20,45,75,.06)}
-    .tool-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:24px;padding:6px;border:1px solid #dce3ec;border-radius:10px;background:#f3f6fa}
-    .tool-tab{min-width:0;min-height:46px;padding:10px 12px;border:1px solid #b9c9dc;border-radius:7px;background:#fff;color:#46566d;font-family:inherit;font-size:15px;font-weight:600;line-height:1.35;box-shadow:0 1px 2px rgba(20,45,75,.05);cursor:pointer}
-    .tool-tab:hover{border-color:#1f5fbf;background:#eef4fd;color:#1f5fbf}
-    .tool-tab[aria-selected="true"]{border-color:#1f5fbf;background:#1f5fbf;color:#fff;box-shadow:0 3px 9px rgba(31,95,191,.18)}
-    .tool-tab:focus-visible,.resource-link:focus-visible{outline:3px solid rgba(31,95,191,.28);outline-offset:2px}
-    [role="tabpanel"] h2{margin:0 0 18px;font-size:22px}.share-text{overflow-wrap:anywhere;margin:0;padding:18px;border-radius:8px;background:#f3f6fa;color:#26364b;font:15px/1.9 ui-monospace,Consolas,monospace;white-space:pre-wrap}
+    *{box-sizing:border-box}body{margin:0}main{width:min(1100px,100%);margin:auto;padding:32px 28px 64px}[hidden]{display:none!important}
+    .page-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:22px}.eyebrow{margin:0 0 8px;color:#1f5fbf;font-size:12px;font-weight:700;letter-spacing:.1em}h1{margin:0;font-size:clamp(30px,4vw,40px);line-height:1.25;letter-spacing:-.035em}.lead{margin:10px 0 0;color:#596579;font-size:14px;line-height:1.8}.overview-count{margin:0 0 4px;color:#68778b;font-size:13px;white-space:nowrap}.overview-count strong{color:#1f5fbf;font-size:22px;font-variant-numeric:tabular-nums}
+    .tool-overview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;scroll-margin-top:20px}.tool-entry{display:flex;flex-direction:column;align-items:stretch;gap:10px;min-width:0;padding:20px 22px;border:1px solid #c9d5e5;border-radius:10px;background:#fff;color:#17202c;font:inherit;text-align:left;cursor:pointer;transition:border-color .18s,background .18s,transform .18s}.tool-entry:hover{border-color:#1f5fbf;background:#f3f7fe}.tool-entry:active{transform:translateY(1px)}.tool-entry[aria-expanded="true"]{border-color:#1f5fbf;background:#edf4ff;box-shadow:inset 3px 0 #1f5fbf}.entry-heading{display:flex;align-items:center;gap:12px}.entry-number{color:#8a99ae;font-size:12px;font-weight:600;font-variant-numeric:tabular-nums}.entry-title{flex:1;font-size:18px;font-weight:700;line-height:1.45}.entry-arrow{color:#1f5fbf;font-size:21px}.entry-description{color:#596579;font-size:14px;line-height:1.6}.entry-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#1f5fbf;font-size:12px;font-weight:600}.entry-type{color:#68778b;font-weight:400}.tool-entry:last-child{grid-column:1/-1}.tool-entry:focus-visible,.resource-link:focus-visible,.back-overview:focus-visible{outline:3px solid rgba(31,95,191,.28);outline-offset:3px}
+    .tool-details{margin-top:28px;padding:26px 28px 30px;border:1px solid #dce3ec;border-radius:12px;background:#fff;scroll-margin-top:18px}.details-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #e2e8f0}.details-heading h2{margin:0;color:#68778b;font-size:13px;font-weight:500}.back-overview{min-height:40px;padding:8px 12px;border:1px solid #b9c9dc;border-radius:6px;background:#f8fbff;color:#1f5fbf;font:inherit;font-size:13px;font-weight:600;cursor:pointer}.back-overview:hover{background:#edf4ff}[data-tool-panel] h2{margin:0 0 18px;font-size:24px;line-height:1.5}.share-text{overflow-wrap:anywhere;margin:0;padding:18px;border-radius:8px;background:#f3f6fa;color:#26364b;font:15px/1.9 ui-monospace,Consolas,monospace;white-space:pre-wrap}
     .actions{display:flex;align-items:center;gap:16px;margin-top:22px;flex-wrap:wrap}.copy{padding:11px 20px;border:1px solid #1f5fbf;border-radius:7px;background:#1f5fbf;color:#fff;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer}
     .copy:hover{background:#184e9f}.copy:focus-visible{outline:3px solid rgba(31,95,191,.25);outline-offset:2px}.status{min-height:24px;color:#596579;font-size:14px}
     figure{margin:24px 0 0}.file-preview img,.magic-image{display:block;width:100%;height:auto;border:1px solid #e2e8f0;border-radius:8px}.file-preview figcaption,figure figcaption{margin-top:8px;color:#68778b;font-size:13px}
-    .resource-card{padding:22px;border:1px solid #dce3ec;border-radius:9px;background:#fff}.resource-card+.resource-card{margin-top:16px}.resource-card h3{margin:0 0 8px;font-size:19px}.resource-card p{margin:8px 0;color:#596579;line-height:1.75}
+    .resource-card h3{margin:0 0 8px;font-size:19px}.resource-card p{margin:8px 0;color:#596579;line-height:1.85}
     .resource-link{display:inline-flex;align-items:center;min-height:42px;margin-top:8px;padding:9px 14px;border:1px solid #1f5fbf;border-radius:7px;color:#1f5fbf;font-weight:700;text-decoration:none}.resource-link:hover{background:#f0f6ff}
     .magic-gallery{display:grid;grid-template-columns:1fr;gap:16px;margin-top:20px}.magic-gallery figure{margin:0}.magic-gallery .intro-image{max-height:720px;object-fit:contain;object-position:top;background:#f7f8fa}
-    .boss-helper{margin-bottom:28px}.boss-helper h2{line-height:1.5}.tool-features,.usage-steps{padding-left:24px;color:#46566d;line-height:1.85}.tool-features li+li{margin-top:6px}.usage-guide{margin-top:22px;border:1px solid #dce3ec;border-radius:8px;overflow:hidden}.usage-guide summary{padding:15px 16px;background:#f3f6fa;color:#1f5fbf;font-weight:700;cursor:pointer;line-height:1.6}.usage-guide summary:focus-visible{outline:3px solid rgba(31,95,191,.28);outline-offset:-3px}.usage-content{padding:4px 18px 18px;overflow-wrap:anywhere}.usage-steps li{padding-left:3px}.usage-steps li+li{margin-top:18px}.usage-steps strong{display:block;color:#17202c}.usage-note{margin:18px 0;padding:14px 16px;border-left:3px solid #b86b16;border-radius:4px;background:#fff7e8;color:#654417;line-height:1.8}.usage-note p{color:inherit}.boss-helper .actions{gap:10px;margin-top:14px}.boss-helper .resource-link{margin-top:0}.boss-helper h3{margin-top:22px}.boss-helper .source-note{margin-top:20px;font-size:13px}.usage-content a{color:#1f5fbf}.usage-content code{overflow-wrap:anywhere}
-    @media(max-width:600px){main{padding:34px 16px 56px}.tool{padding:18px}.tool-tabs{gap:8px;padding:4px}.tool-tab{padding:9px 5px;font-size:13px}.share-text{font-size:13px}.resource-card{padding:18px}}
+    .boss-helper h2{line-height:1.5}.tool-features,.usage-steps{padding-left:24px;color:#46566d;line-height:1.85}.tool-features li+li{margin-top:6px}.usage-guide{margin-top:22px;border:1px solid #dce3ec;border-radius:8px;overflow:hidden}.usage-guide summary{padding:15px 16px;background:#f3f6fa;color:#1f5fbf;font-weight:700;cursor:pointer;line-height:1.6}.usage-guide summary:focus-visible{outline:3px solid rgba(31,95,191,.28);outline-offset:-3px}.usage-content{padding:4px 18px 18px;overflow-wrap:anywhere}.usage-steps li{padding-left:3px}.usage-steps li+li{margin-top:18px}.usage-steps strong{display:block;color:#17202c}.usage-note{margin:18px 0;padding:14px 16px;border-left:3px solid #b86b16;border-radius:4px;background:#fff7e8;color:#654417;line-height:1.8}.usage-note p{color:inherit}.boss-helper .actions{gap:10px;margin-top:14px}.boss-helper .resource-link{margin-top:0}.boss-helper h3{margin-top:22px}.boss-helper .source-note{margin-top:20px;font-size:13px}.usage-content a{color:#1f5fbf}
+    @media(max-width:600px){main{padding:22px 16px 44px}.page-heading{gap:12px;margin-bottom:18px}.eyebrow{display:none}h1{font-size:28px}.lead{margin-top:6px;font-size:12px}.overview-count{font-size:11px}.overview-count strong{font-size:18px}.tool-overview{grid-template-columns:1fr;gap:9px}.tool-entry{gap:5px;padding:12px 15px}.entry-heading{gap:8px}.entry-title{font-size:16px}.entry-description{font-size:12px;line-height:1.5}.entry-footer{font-size:11px}.entry-arrow{font-size:18px}.tool-details{margin-top:22px;padding:18px 16px 24px}.details-heading{margin-bottom:20px}[data-tool-panel] h2{font-size:21px}.share-text{font-size:13px}.usage-content{padding:4px 12px 16px}}
+    @media(prefers-reduced-motion:reduce){.tool-entry{transition:none}}
   </style>
 </head>
 <body>
   <main>
-    <p class="eyebrow">求职辅助</p>
-    <h1>求职工具</h1>
-    <p class="lead">网申、简历制作与校招信息，按需查看。</p>
-    <section class="tool" aria-label="求职工具分类">
-      <div class="tool-tabs" role="tablist" aria-label="求职工具分类">
-        <button class="tool-tab" id="tab-apply" type="button" role="tab" aria-selected="true" aria-controls="panel-apply" tabindex="0">一键网申插件</button>
-        <button class="tool-tab" id="tab-resume" type="button" role="tab" aria-selected="false" aria-controls="panel-resume" tabindex="-1">简历制作/优化</button>
-        <button class="tool-tab" id="tab-campus" type="button" role="tab" aria-selected="false" aria-controls="panel-campus" tabindex="-1">全国校招信息汇总</button>
-      </div>
-      <div id="panel-apply" role="tabpanel" aria-labelledby="tab-apply" tabindex="0">
+    <header class="page-heading">
+      <div><p class="eyebrow">求职辅助</p><h1>求职工具</h1><p class="lead">全部工具在这里，选择一个查看入口与用法。</p></div>
+      <p class="overview-count"><strong>5</strong> 个工具入口</p>
+    </header>
+    <section class="tool-overview" id="tool-overview" aria-label="全部求职工具">
+      <button class="tool-entry" type="button" data-tool-target="panel-boss" aria-controls="panel-boss" aria-expanded="false">
+        <span class="entry-heading"><span class="entry-number">01</span><span class="entry-title">小臣版 AI-Boss 海投助手</span><span class="entry-arrow" aria-hidden="true">→</span></span>
+        <span class="entry-description">BOSS 直聘批量沟通、简历解析与 AI 辅助回复。</span>
+        <span class="entry-footer"><span class="entry-type">投递辅助 · AI 功能需自配 API</span><span>查看介绍与教程</span></span>
+      </button>
+      <button class="tool-entry" type="button" data-tool-target="panel-baidu" aria-controls="panel-baidu" aria-expanded="false">
+        <span class="entry-heading"><span class="entry-number">02</span><span class="entry-title">一键网申插件合集</span><span class="entry-arrow" aria-hidden="true">→</span></span>
+        <span class="entry-description">一键网申插件、智能投简历插件合集，含2份资源。</span>
+        <span class="entry-footer"><span class="entry-type">投递辅助 · 百度网盘</span><span>查看分享与提取码</span></span>
+      </button>
+      <button class="tool-entry" type="button" data-tool-target="panel-workshop" aria-controls="panel-workshop" aria-expanded="false">
+        <span class="entry-heading"><span class="entry-number">03</span><span class="entry-title">简历制作工坊（学生版）</span><span class="entry-arrow" aria-hidden="true">→</span></span>
+        <span class="entry-description">在浏览器编辑简历，预览并导出 PDF、Word。</span>
+        <span class="entry-footer"><span class="entry-type">简历制作 · 建议电脑使用</span><span>查看工具入口</span></span>
+      </button>
+      <button class="tool-entry" type="button" data-tool-target="panel-magic" aria-controls="panel-magic" aria-expanded="false">
+        <span class="entry-heading"><span class="entry-number">04</span><span class="entry-title">魔方简历（Magic Resume）</span><span class="entry-arrow" aria-hidden="true">→</span></span>
+        <span class="entry-description">简历模板、在线编辑与 AI 优化。</span>
+        <span class="entry-footer"><span class="entry-type">简历优化 · 需自配模型 API</span><span>查看网址与效果图</span></span>
+      </button>
+      <button class="tool-entry" type="button" data-tool-target="panel-campus" aria-controls="panel-campus" aria-expanded="false">
+        <span class="entry-heading"><span class="entry-number">05</span><span class="entry-title">全国校招信息汇总</span><span class="entry-arrow" aria-hidden="true">→</span></span>
+        <span class="entry-description">通过飞书汇总表查看全国校园招聘信息。</span>
+        <span class="entry-footer"><span class="entry-type">校招信息 · 在线表格</span><span>查看汇总表入口</span></span>
+      </button>
+    </section>
+    <section class="tool-details" id="tool-details" aria-labelledby="details-label" hidden>
+      <div class="details-heading"><h2 id="details-label" tabindex="-1">工具详情</h2><button class="back-overview" type="button" id="back-overview">返回全部工具 ↑</button></div>
+      <div id="panel-boss" data-tool-panel hidden>
         <article class="resource-card boss-helper" id="boss-helper" aria-labelledby="boss-helper-title">
           <h2 id="boss-helper-title">小臣版 AI-Boss 海投助手</h2>
           <p>面向 BOSS 直聘网页版的求职辅助脚本，可批量发起沟通、筛选岗位，并通过 AI 解析简历、生成招呼语和回复 HR。</p>
@@ -83,6 +103,8 @@
           </details>
           <p class="source-note">说明依据：<a href="https://github.com/DYxiaochen/AI-BossJob/blob/main/README.md" target="_blank" rel="noopener noreferrer">项目 README</a>与 GitHub V2.0.0.0 源码，整理于2026年10月26日。第三方开源工具，功能兼容性以项目更新为准；本网站未登录求职账号验证实际投递效果。</p>
         </article>
+      </div>
+      <div id="panel-baidu" data-tool-panel hidden>
         <h2>百度网盘：一键网申插件等2个文件</h2>
         <pre class="share-text" id="share-text">通过百度网盘分享的文件：一键网申插件等2个文件
 链接:https://pan.baidu.com/s/1fTSlIlI8SqwI4DWJA-foNw
@@ -93,34 +115,35 @@
           <span class="status" id="status" role="status" aria-live="polite"></span>
         </div>
         <figure class="file-preview">
-          <img src="./images/job-tools-baidu-share.jpg" alt="百度网盘文件列表，显示一键网申插件和智能投简历插件合集">
+          <img src="./images/job-tools-baidu-share.jpg" loading="lazy" alt="百度网盘文件列表，显示一键网申插件和智能投简历插件合集">
           <figcaption>百度网盘分享文件列表</figcaption>
         </figure>
       </div>
-      <div id="panel-resume" role="tabpanel" aria-labelledby="tab-resume" tabindex="0" hidden>
-        <h2>简历制作与优化</h2>
+      <div id="panel-workshop" data-tool-panel hidden>
         <article class="resource-card">
-          <h3>简历制作工坊（学生版）</h3>
+          <h2>简历制作工坊（学生版）</h2>
           <p>本地浏览器编辑简历，可预览并导出 PDF、Word。建议使用电脑端 Chrome 或 Edge；简历内容保存在当前浏览器中。</p>
           <a class="resource-link" href="./resume-workshop/" target="_blank" rel="noopener noreferrer">打开简历制作工坊 ↗</a>
         </article>
+      </div>
+      <div id="panel-magic" data-tool-panel hidden>
         <article class="resource-card">
-          <h3>魔方简历（Magic Resume）</h3>
+          <h2>魔方简历（Magic Resume）</h2>
           <p>AI 驱动的简历编辑与模板工具；使用前需要自行配置模型 API。</p>
           <a class="resource-link" href="https://magicv.art/" target="_blank" rel="noopener noreferrer">访问魔方简历 ↗</a>
           <div class="magic-gallery">
             <figure>
-              <img class="magic-image intro-image" src="./images/magic-resume-introduction.png" alt="魔方简历项目介绍及功能说明">
+              <img class="magic-image intro-image" src="./images/magic-resume-introduction.png" loading="lazy" alt="魔方简历项目介绍及功能说明">
               <figcaption>项目介绍与功能</figcaption>
             </figure>
             <figure>
-              <img class="magic-image" src="./images/magic-resume-preview.png" alt="魔方简历编辑界面与多种简历模板效果">
+              <img class="magic-image" src="./images/magic-resume-preview.png" loading="lazy" alt="魔方简历编辑界面与多种简历模板效果">
               <figcaption>简历编辑器与模板效果</figcaption>
             </figure>
           </div>
         </article>
       </div>
-      <div id="panel-campus" role="tabpanel" aria-labelledby="tab-campus" tabindex="0" hidden>
+      <div id="panel-campus" data-tool-panel hidden>
         <h2>全国校招信息汇总</h2>
         <p class="lead">打开校招信息汇总表：</p>
         <a class="resource-link" href="https://wcn5yiabqbxh.feishu.cn/base/FBysbrfNWa22l7s6a2scDsfEnTf?table=tblPA2KMUBFbcATH&amp;view=vewYfpcGgF" target="_blank" rel="noopener noreferrer">查看全国校招信息 ↗</a>
@@ -129,25 +152,28 @@
   </main>
   <footer class="site-visit-footer"><span class="visit-counter" aria-live="polite">访问次数：<strong class="visit-count-value" id="visitCount">统计中</strong></span></footer>
   <script>
-    const tabs = [...document.querySelectorAll('[role="tab"]')];
-    function selectTab(tab, focus = false) {
-      tabs.forEach((item) => {
-        const selected = item === tab;
-        item.setAttribute('aria-selected', String(selected));
-        item.tabIndex = selected ? 0 : -1;
-        document.getElementById(item.getAttribute('aria-controls')).hidden = !selected;
+    const entries = [...document.querySelectorAll('[data-tool-target]')];
+    const panels = [...document.querySelectorAll('[data-tool-panel]')];
+    const details = document.getElementById('tool-details');
+    const overview = document.getElementById('tool-overview');
+    const scrollBehavior = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+    let selectedEntry = null;
+    entries.forEach((entry) => {
+      entry.addEventListener('click', () => {
+        selectedEntry = entry;
+        entries.forEach((item) => item.setAttribute('aria-expanded', String(item === entry)));
+        panels.forEach((panel) => { panel.hidden = panel.id !== entry.dataset.toolTarget; });
+        details.hidden = false;
+        document.getElementById('details-label').focus({preventScroll: true});
+        details.scrollIntoView({behavior: scrollBehavior, block: 'start'});
       });
-      if (focus) tab.focus();
-    }
-    tabs.forEach((tab, index) => {
-      tab.addEventListener('click', () => selectTab(tab));
-      tab.addEventListener('keydown', (event) => {
-        if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
-          event.preventDefault();
-          const offset = event.key === 'ArrowRight' ? 1 : -1;
-          selectTab(tabs[(index + offset + tabs.length) % tabs.length], true);
-        }
-      });
+    });
+    document.getElementById('back-overview').addEventListener('click', () => {
+      details.hidden = true;
+      panels.forEach((panel) => { panel.hidden = true; });
+      entries.forEach((entry) => entry.setAttribute('aria-expanded', 'false'));
+      selectedEntry.focus({preventScroll: true});
+      overview.scrollIntoView({behavior: scrollBehavior, block: 'start'});
     });
     document.querySelectorAll('[data-copy-target]').forEach((copyButton) => {
       copyButton.addEventListener('click', async () => {
