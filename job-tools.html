@@ -10,7 +10,7 @@
     :root{font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;color:#17202c;background:#f8fafc}
     *{box-sizing:border-box}body{margin:0}main{width:min(1100px,100%);margin:auto;padding:32px 28px 64px}[hidden]{display:none!important}
     .page-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:22px}.eyebrow{margin:0 0 8px;color:#1f5fbf;font-size:12px;font-weight:700;letter-spacing:.1em}h1{margin:0;font-size:clamp(30px,4vw,40px);line-height:1.25;letter-spacing:-.035em}.lead{margin:10px 0 0;color:#596579;font-size:14px;line-height:1.8}.overview-count{margin:0 0 4px;color:#68778b;font-size:13px;white-space:nowrap}.overview-count strong{color:#1f5fbf;font-size:22px;font-variant-numeric:tabular-nums}
-    .tool-overview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;scroll-margin-top:20px}.tool-entry{display:flex;flex-direction:column;align-items:stretch;gap:10px;min-width:0;padding:20px 22px;border:1px solid #c9d5e5;border-radius:10px;background:#fff;color:#17202c;font:inherit;text-align:left;cursor:pointer;transition:border-color .18s,background .18s,transform .18s}.tool-entry:hover{border-color:#1f5fbf;background:#f3f7fe}.tool-entry:active{transform:translateY(1px)}.tool-entry[aria-expanded="true"]{border-color:#1f5fbf;background:#edf4ff;box-shadow:inset 3px 0 #1f5fbf}.entry-heading{display:flex;align-items:center;gap:12px}.entry-number{color:#8a99ae;font-size:12px;font-weight:600;font-variant-numeric:tabular-nums}.entry-title{flex:1;font-size:18px;font-weight:700;line-height:1.45}.entry-arrow{color:#1f5fbf;font-size:21px}.entry-description{color:#596579;font-size:14px;line-height:1.6}.entry-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#1f5fbf;font-size:12px;font-weight:600}.entry-type{color:#68778b;font-weight:400}.tool-entry:last-child{grid-column:1/-1}.tool-entry:focus-visible,.resource-link:focus-visible,.back-overview:focus-visible{outline:3px solid rgba(31,95,191,.28);outline-offset:3px}
+    .tool-overview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;scroll-margin-top:20px}.tool-entry{display:flex;flex-direction:column;align-items:stretch;gap:10px;min-width:0;padding:20px 22px;border:1px solid #c9d5e5;border-radius:10px;background:#fff;color:#17202c;font:inherit;text-align:left;cursor:pointer;transition:border-color .18s,background .18s,transform .18s}.tool-entry:hover{border-color:#1f5fbf;background:#f3f7fe}.tool-entry:active{transform:translateY(1px)}.tool-entry[aria-expanded="true"]{border-color:#1f5fbf;background:#edf4ff;box-shadow:inset 3px 0 #1f5fbf}.entry-heading{display:flex;align-items:center;gap:12px}.entry-number{color:#8a99ae;font-size:12px;font-weight:600;font-variant-numeric:tabular-nums}.entry-title{flex:1;font-size:18px;font-weight:700;line-height:1.45}.entry-arrow{color:#1f5fbf;font-size:21px}.entry-description{color:#596579;font-size:14px;line-height:1.6}.entry-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#1f5fbf;font-size:12px;font-weight:600}.entry-type{color:#68778b;font-weight:400}.tool-entry:focus-visible,.resource-link:focus-visible,.back-overview:focus-visible{outline:3px solid rgba(31,95,191,.28);outline-offset:3px}
     .tool-details{margin-top:28px;padding:26px 28px 30px;border:1px solid #dce3ec;border-radius:12px;background:#fff;scroll-margin-top:18px}.details-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #e2e8f0}.details-heading h2{margin:0;color:#68778b;font-size:13px;font-weight:500}.back-overview{min-height:40px;padding:8px 12px;border:1px solid #b9c9dc;border-radius:6px;background:#f8fbff;color:#1f5fbf;font:inherit;font-size:13px;font-weight:600;cursor:pointer}.back-overview:hover{background:#edf4ff}[data-tool-panel] h2{margin:0 0 18px;font-size:24px;line-height:1.5}.share-text{overflow-wrap:anywhere;margin:0;padding:18px;border-radius:8px;background:#f3f6fa;color:#26364b;font:15px/1.9 ui-monospace,Consolas,monospace;white-space:pre-wrap}
     .actions{display:flex;align-items:center;gap:16px;margin-top:22px;flex-wrap:wrap}.copy{padding:11px 20px;border:1px solid #1f5fbf;border-radius:7px;background:#1f5fbf;color:#fff;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer}
     .copy:hover{background:#184e9f}.copy:focus-visible{outline:3px solid rgba(31,95,191,.25);outline-offset:2px}.status{min-height:24px;color:#596579;font-size:14px}
@@ -19,7 +19,7 @@
     .resource-link{display:inline-flex;align-items:center;min-height:42px;margin-top:8px;padding:9px 14px;border:1px solid #1f5fbf;border-radius:7px;color:#1f5fbf;font-weight:700;text-decoration:none}.resource-link:hover{background:#f0f6ff}
     .magic-gallery{display:grid;grid-template-columns:1fr;gap:16px;margin-top:20px}.magic-gallery figure{margin:0}.magic-gallery .intro-image{max-height:720px;object-fit:contain;object-position:top;background:#f7f8fa}
     .boss-helper h2{line-height:1.5}.tool-features,.usage-steps{padding-left:24px;color:#46566d;line-height:1.85}.tool-features li+li{margin-top:6px}.usage-guide{margin-top:22px;border:1px solid #dce3ec;border-radius:8px;overflow:hidden}.usage-guide summary{padding:15px 16px;background:#f3f6fa;color:#1f5fbf;font-weight:700;cursor:pointer;line-height:1.6}.usage-guide summary:focus-visible{outline:3px solid rgba(31,95,191,.28);outline-offset:-3px}.usage-content{padding:4px 18px 18px;overflow-wrap:anywhere}.usage-steps li{padding-left:3px}.usage-steps li+li{margin-top:18px}.usage-steps strong{display:block;color:#17202c}.usage-note{margin:18px 0;padding:14px 16px;border-left:3px solid #b86b16;border-radius:4px;background:#fff7e8;color:#654417;line-height:1.8}.usage-note p{color:inherit}.boss-helper .actions{gap:10px;margin-top:14px}.boss-helper .resource-link{margin-top:0}.boss-helper h3{margin-top:22px}.boss-helper .source-note{margin-top:20px;font-size:13px}.usage-content a{color:#1f5fbf}
-    @media(max-width:600px){main{padding:22px 16px 44px}.page-heading{gap:12px;margin-bottom:18px}.eyebrow{display:none}h1{font-size:28px}.lead{margin-top:6px;font-size:12px}.overview-count{font-size:11px}.overview-count strong{font-size:18px}.tool-overview{grid-template-columns:1fr;gap:9px}.tool-entry{gap:5px;padding:12px 15px}.entry-heading{gap:8px}.entry-title{font-size:16px}.entry-description{font-size:12px;line-height:1.5}.entry-footer{font-size:11px}.entry-arrow{font-size:18px}.tool-details{margin-top:22px;padding:18px 16px 24px}.details-heading{margin-bottom:20px}[data-tool-panel] h2{font-size:21px}.share-text{font-size:13px}.usage-content{padding:4px 12px 16px}}
+    @media(max-width:600px){main{padding:22px 16px 44px}.page-heading{gap:12px;margin-bottom:18px}.eyebrow{display:none}h1{font-size:28px}.lead{margin-top:6px;font-size:12px}.overview-count{font-size:11px}.overview-count strong{font-size:18px}.tool-overview{gap:9px}.tool-entry{gap:6px;padding:12px}.entry-heading{align-items:flex-start}.entry-title{min-height:41px;font-size:14px}.entry-description{min-height:36px;font-size:12px;line-height:1.5}.entry-footer{flex-direction:column;align-items:flex-start;gap:3px;font-size:11px;line-height:1.5}.entry-type{font-size:10px}.entry-number,.entry-arrow{display:none}.tool-details{margin-top:22px;padding:18px 16px 24px}.details-heading{margin-bottom:20px}[data-tool-panel] h2{font-size:21px}.share-text{font-size:13px}.usage-content{padding:4px 12px 16px}}
     @media(prefers-reduced-motion:reduce){.tool-entry{transition:none}}
   </style>
 </head>
@@ -27,7 +27,7 @@
   <main>
     <header class="page-heading">
       <div><p class="eyebrow">求职辅助</p><h1>求职工具</h1><p class="lead">全部工具在这里，选择一个查看入口与用法。</p></div>
-      <p class="overview-count"><strong>5</strong> 个工具入口</p>
+      <p class="overview-count"><strong>6</strong> 个工具入口</p>
     </header>
     <section class="tool-overview" id="tool-overview" aria-label="全部求职工具">
       <button class="tool-entry" type="button" data-tool-target="panel-boss" aria-controls="panel-boss" aria-expanded="false">
@@ -54,6 +54,11 @@
         <span class="entry-heading"><span class="entry-number">05</span><span class="entry-title">全国校招信息汇总</span><span class="entry-arrow" aria-hidden="true">→</span></span>
         <span class="entry-description">通过飞书汇总表查看全国校园招聘信息。</span>
         <span class="entry-footer"><span class="entry-type">校招信息 · 在线表格</span><span>查看汇总表入口</span></span>
+      </button>
+      <button class="tool-entry" type="button" data-tool-target="panel-offerbiye" aria-controls="panel-offerbiye" aria-expanded="false">
+        <span class="entry-heading"><span class="entry-number">06</span><span class="entry-title">OfferBiye（笔咚AI）</span><span class="entry-arrow" aria-hidden="true">→</span></span>
+        <span class="entry-description">截图题目解析与面试辅助，查看官方入口及练习指引。</span>
+        <span class="entry-footer"><span class="entry-type">笔面试准备 · 试用额度待核实</span><span>查看使用流程</span></span>
       </button>
     </section>
     <section class="tool-details" id="tool-details" aria-labelledby="details-label" hidden>
@@ -147,6 +152,39 @@
         <h2>全国校招信息汇总</h2>
         <p class="lead">打开校招信息汇总表：</p>
         <a class="resource-link" href="https://wcn5yiabqbxh.feishu.cn/base/FBysbrfNWa22l7s6a2scDsfEnTf?table=tblPA2KMUBFbcATH&amp;view=vewYfpcGgF" target="_blank" rel="noopener noreferrer">查看全国校招信息 ↗</a>
+      </div>
+      <div id="panel-offerbiye" data-tool-panel hidden>
+        <article class="resource-card" aria-labelledby="offerbiye-title">
+          <h2 id="offerbiye-title">OfferBiye（笔咚AI）</h2>
+          <p>第三方 AI 笔试与面试辅助产品。官网公开介绍包括截图题目解析、图形推理、数理逻辑、言语理解及数据结构与算法等题型，并提供电脑客户端和手机、平板端入口。本页按日常刷题和模拟面试的准备场景介绍使用流程。</p>
+          <div class="actions">
+            <a class="resource-link" href="https://www.offerbiye.com/" target="_blank" rel="noopener noreferrer">打开 OfferBiye 官网 ↗</a>
+            <a class="resource-link" href="https://h5.offerbiye.com/" target="_blank" rel="noopener noreferrer">手机 / 平板入口 ↗</a>
+            <a class="resource-link" href="https://www.offerbiye.com/login?redirect=%2Fdashboard%2Fpackages" target="_blank" rel="noopener noreferrer">登录查看试用与套餐 ↗</a>
+          </div>
+          <aside class="usage-note" aria-label="试用与收费说明">
+            <strong>有免费试用入口，不代表永久免费。</strong>目前未核实免费次数或时长、有效期、适用功能及套餐金额。请登录官网核对后再决定是否付费；本页不承诺任何免费额度或答题正确率。
+          </aside>
+          <details class="usage-guide" id="offerbiye-usage" open>
+            <summary>新手使用流程：登录、试用与练习</summary>
+            <div class="usage-content">
+              <ol class="usage-steps">
+                <li><strong>打开官方入口，使用本人账号登录</strong>电脑点击上方官网入口，手机或平板可点击 H5 入口。进入登录页后，按当前提供的微信扫码、手机号验证码或账号密码方式操作；注册及验证由本人完成。</li>
+                <li><strong>先看试用范围和扣费规则</strong>点击“登录查看试用与套餐”，检查账户是否有可用试用额度，以及额度用于笔试还是面试、按次还是按时长计算、何时到期。未显示或不清楚的项目，先向官网客服确认，不要把“免费试用”理解为所有功能免费。</li>
+                <li><strong>阅读官网教程，选择设备与功能</strong>回到官网查看“使用教程”，选择需要体验的笔试或面试辅助入口。若所选功能要求安装客户端，只从官网客户端下载入口获取对应系统版本；手机与电脑是否需要配合使用，按官方当前教程操作。</li>
+                <li><strong>用一道练习题试用笔试解析</strong>选一道允许自行练习的旧题或公开题目，按官方教程截图或提交题目，检查文字、图形和选项是否识别完整，再查看生成的答案与步骤。先与可靠题解对照，确认是否真正理解解法，并观察本次消耗的额度。</li>
+                <li><strong>先做短时间模拟面试</strong>进入面试辅助入口，先用自我介绍、项目经历等练习题测试。如当前界面提供简历、题库、语音或设备设置，只按提示提供练习所需材料和权限，核对识别内容和回答建议是否符合本人真实经历。实时语音、简历定制等具体能力尚未由本站实测，不应仅凭宣传认定可用。</li>
+                <li><strong>核对与复盘，再决定是否继续使用</strong>不直接照读或照抄 AI 答案；记录易错题和表达问题，用自己的话重新作答。使用后查看剩余额度，结束录音或屏幕采集，退出账号；确认功能、费用和数据处理方式符合需求后，再决定是否购买套餐。</li>
+              </ol>
+              <h3>使用前还需知道</h3>
+              <p><strong>用于练习与准备：</strong>正式招聘测评、笔试或面试是否允许使用辅助工具，应遵守主办方的要求。</p>
+              <p><strong>保护个人材料：</strong>如需上传简历，先去除身份证号、家庭住址等非必要敏感信息；涉及录音或屏幕采集时，先了解内容会上传到哪里、保存多久，并取得必要的同意。</p>
+              <p><strong>页面打不开或入口变化：</strong>先核对域名是否为 offerbiye.com；遇到访问故障、登录后无额度或找不到对应入口，请查看官方说明或联系官网客服，勿从陌生人处购买账号或安装包。</p>
+              <p><strong>核实范围：</strong>以上是依据公开产品介绍和登录入口整理的上手指引，未登录账号测试客户端、账号内按钮或真实效果；功能名称、设备支持、操作界面及费用以官方当前页面为准。</p>
+            </div>
+          </details>
+          <p class="source-note">来源：<a href="https://www.offerbiye.com/" target="_blank" rel="noopener noreferrer">OfferBiye 官网公开介绍</a>、<a href="https://www.offerbiye.com/login?redirect=%2Fdashboard%2Fpackages" target="_blank" rel="noopener noreferrer">官方登录与套餐入口</a>；整理于2026年10月26日。官网部分页面当前访问不稳定，未将搜索摘要当作完整教程或已验证功能。</p>
+        </article>
       </div>
     </section>
   </main>
