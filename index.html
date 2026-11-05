@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="福建理工大学电气与信息工程学院招聘活动、就业与实习信息">
   <title>电气学院就业日历</title>
+  <link rel="stylesheet" href="./new-items.css">
   <style>
     :root{--blue:#1f5fbf;--line:#b9c9dc;--ink:#17202c;--muted:#475467;--bar:#f5f7fa;font-family:"Noto Sans SC","Source Han Sans SC","Microsoft YaHei",sans-serif;color:var(--ink)}
     *{box-sizing:border-box}
@@ -32,20 +33,23 @@
       <button type="button" role="tab" aria-selected="false" data-page="./job-tools.html" data-title="求职工具">求职工具</button>
     </div>
   </nav>
-  <iframe id="content" src="./events/" title="招聘活动" loading="eager"></iframe>
+  <iframe id="content" title="招聘活动" loading="eager"></iframe>
   <script>
     const frame=document.querySelector('#content');
     const tabs=[...document.querySelectorAll('[role="tab"]')];
     const selectTab=(tab)=>{
       tabs.forEach((item)=>item.setAttribute('aria-selected',String(item===tab)));
       frame.title=tab.dataset.title;
-      frame.src=tab.dataset.page;
+      const refresh=['招聘活动','找工作','找实习'].includes(tab.dataset.title);
+      frame.src=tab.dataset.page+(refresh?'?v='+Date.now():'');
     };
     tabs.forEach((tab)=>tab.addEventListener('click',()=>selectTab(tab)));
     frame.addEventListener('load',()=>{
       const innerSwitch=frame.contentDocument?.querySelector('.board-switch');
       if(innerSwitch) innerSwitch.style.display='none';
     });
+    selectTab(tabs[0]);
   </script>
+  <script type="module" src="./new-items.js"></script>
 </body>
 </html>
