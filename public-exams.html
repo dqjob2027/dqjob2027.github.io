@@ -15,7 +15,7 @@
     a:hover,a:focus-visible{color:#1f5fbf;background:#f0f5fc}a:focus-visible{outline:2px solid #1f5fbf;outline-offset:-2px}
     .number{min-width:34px;color:#1f5fbf;font-size:14px;font-weight:700}.title{flex:1;font-size:18px;font-weight:600}.arrow{color:#1f5fbf;font-size:22px}
     .modules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:36px}
-    .module{padding:24px;text-align:left;border:1px solid #dce3ec;border-radius:8px;background:#fff;color:inherit;font:inherit;cursor:pointer}
+    .module{display:block;padding:24px;text-align:left;border:1px solid #dce3ec;border-radius:8px;background:#fff;color:inherit;font:inherit;cursor:pointer}
     .module:hover,.module[aria-expanded="true"]{border-color:#1f5fbf;background:#f0f5fc}.module:focus-visible{outline:2px solid #1f5fbf;outline-offset:3px}
     .module-name{display:block;margin-bottom:8px;font-size:24px;font-weight:700}.module-desc{color:#596579;font-size:14px;line-height:1.6}
     h2{margin:0;font-size:26px}.module-content .lead{margin:12px 0 24px}
@@ -27,7 +27,7 @@
   <main>
     <p class="eyebrow">备考资料</p>
     <h1>考研考公考编</h1>
-    <p class="lead">请选择备考方向，点击模块查看对应资料。</p>
+    <p class="lead">请选择备考或学习方向，点击模块查看资料或开始练习。</p>
     <div class="modules" aria-label="备考方向">
       <button class="module" type="button" aria-expanded="false" aria-controls="postgraduate">
         <span class="module-name">考研</span><span class="module-desc">政治复习 · 考点时间轴</span>
@@ -35,6 +35,9 @@
       <button class="module" type="button" aria-expanded="false" aria-controls="civil-service">
         <span class="module-name">考公考编</span><span class="module-desc">考试指南 · 备考资料 · 招聘官网</span>
       </button>
+      <a class="module" href="https://typewords.cc/" target="_blank" rel="noopener noreferrer" aria-label="英语：打开 TypeWords 在线练习（新窗口）">
+        <span class="module-name">英语</span><span class="module-desc">TypeWords · 单词记忆 · 打字练习</span>
+      </a>
     </div>
     <section class="module-content" id="postgraduate" aria-labelledby="postgraduate-title" hidden>
       <h2 id="postgraduate-title">考研</h2>
@@ -58,7 +61,7 @@
   </main>
   <footer class="site-visit-footer"><span class="visit-counter" aria-live="polite">访问次数：<strong class="visit-count-value" id="visitCount">统计中</strong></span></footer>
   <script>
-    const modules=[...document.querySelectorAll('.module')];
+    const modules=[...document.querySelectorAll('button.module')];
     modules.forEach((button)=>button.addEventListener('click',()=>{
       modules.forEach((item)=>{
         const selected=item===button;
