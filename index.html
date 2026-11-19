@@ -30,7 +30,7 @@
       <button type="button" role="tab" aria-selected="false" data-page="./jobs.html" data-title="找工作">找工作</button>
       <button type="button" role="tab" aria-selected="false" data-page="./internships.html" data-title="找实习">找实习</button>
       <button type="button" role="tab" aria-selected="false" data-page="./public-exams.html" data-title="考研考公考编">考研考公考编</button>
-      <button type="button" role="tab" aria-selected="false" data-page="./interview-hub.html" data-title="面试">面试</button>
+      <button type="button" role="tab" aria-selected="false" data-page="./interview-hub.html" data-title="面试">面试<span class="new-count" id="interview-unread" aria-hidden="true" hidden>1</span></button>
       <button type="button" role="tab" aria-selected="false" data-page="./job-tools.html" data-title="求职工具">求职工具</button>
     </div>
   </nav>
@@ -52,6 +52,7 @@
     selectTab(tabs[0]);
   </script>
   <script type="module" src="./new-items.js"></script>
+  <script type="module" src="./interview-unread.js"></script>
   <script type="module" src="./interactions/site-interactions.js"></script>
 </body>
 </html>
