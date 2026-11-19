@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>面试｜电气学院就业日历</title>
+  <link rel="stylesheet" href="./visit-counter.css">
+  <script defer src="./visit-counter.js"></script>
+  <style>
+    :root{font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;color:#17202c;background:#f8fafc}
+    *{box-sizing:border-box}body{margin:0}main{width:min(1100px,100%);margin:auto;padding:32px 28px 64px}
+    .page-heading{margin-bottom:22px}h1{margin:0;font-size:clamp(30px,4vw,40px);line-height:1.25;letter-spacing:-.035em}
+    .lead{margin:10px 0 0;color:#596579;font-size:14px;line-height:1.8}
+    .tool-overview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .tool-entry{display:flex;flex-direction:column;gap:10px;min-width:0;padding:20px 22px;border:1px solid #c9d5e5;border-radius:10px;background:#fff;color:#17202c;text-decoration:none;transition:border-color .18s,background .18s,transform .18s}
+    .tool-entry:hover{border-color:#1f5fbf;background:#f3f7fe}.tool-entry:active{transform:translateY(1px)}
+    .tool-entry:focus-visible{outline:3px solid rgba(31,95,191,.28);outline-offset:3px}
+    .entry-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .entry-title{font-size:18px;font-weight:700;line-height:1.45}.entry-arrow{color:#1f5fbf;font-size:21px}
+    .entry-description{color:#596579;font-size:14px;line-height:1.6}
+    .entry-action{align-self:flex-end;margin-top:auto;color:#1f5fbf;font-size:12px;font-weight:600}
+    @media(max-width:600px){main{padding:22px 16px 44px}.page-heading{margin-bottom:18px}h1{font-size:28px}.lead{margin-top:6px;font-size:12px}.tool-overview{gap:9px}.tool-entry{gap:6px;padding:12px}.entry-title{font-size:14px}.entry-description{font-size:12px;line-height:1.5}.entry-action{align-self:flex-start;font-size:11px}.entry-arrow{display:none}}
+    @media(prefers-reduced-motion:reduce){.tool-entry{transition:none}}
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-heading">
+      <h1>面试</h1>
+      <p class="lead">查阅高频面试题，练习无领导小组讨论。</p>
+    </header>
+    <nav class="tool-overview" aria-label="面试模块">
+      <a class="tool-entry" href="./interview.html">
+        <span class="entry-heading"><span class="entry-title">面试100问</span><span class="entry-arrow" aria-hidden="true">→</span></span>
+        <span class="entry-description">按目录查看高频面试题，支持在线阅读和 PDF 下载。</span>
+        <span class="entry-action">查看题库</span>
+      </a>
+      <a class="tool-entry" href="./interview-group.html">
+        <span class="entry-heading"><span class="entry-title">无领导小组面试</span><span class="entry-arrow" aria-hidden="true">→</span></span>
+        <span class="entry-description">从个人陈述、自由讨论到小组汇报，掌握每个环节怎么做。</span>
+        <span class="entry-action">查看实战技巧</span>
+      </a>
+    </nav>
+  </main>
+  <footer class="site-visit-footer"><span class="visit-counter" aria-live="polite">访问次数：<strong class="visit-count-value" id="visitCount">统计中</strong></span></footer>
+</body>
+</html>
